@@ -1,1 +1,4 @@
 @import "tailwindcss";
+@import "./transitions.css";
+@import "./theme.css";
+@import "./spacing.css";
