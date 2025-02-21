@@ -24,7 +24,7 @@ const updateValue = (event: Event) => {
       class="w-full rounded-lg border border-gray-300 bg-transparent text-sm text-body placeholder-transparent focus:border-blue-300 focus:outline-none dark:border-gray-600"
       :class="floating ? 'peer px-4 pt-4 pb-1.5 h-14' : 'p-2.5'"
       placeholder=""
-    />
+    >
     <label
       v-if="floating"
       :for="id"
