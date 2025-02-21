@@ -1,3 +1,5 @@
 <template>
-  <span>Hello World</span>
+  <main>
+    <span>Hello World</span>
+  </main>
 </template>
