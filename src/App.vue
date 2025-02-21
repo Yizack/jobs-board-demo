@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { /* RouterLink, */ RouterView, useRoute } from "vue-router";
+import { RouterView, useRoute } from "vue-router";
 import { pascalCase } from "scule";
 import { defineAsyncComponent, computed } from "vue";
 
