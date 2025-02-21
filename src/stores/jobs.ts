@@ -1,24 +1,32 @@
-import { ref, watch, computed } from "vue";
+import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { $fetch } from "ofetch";
 
 export const useJobsStore = defineStore("jobs", () => {
-  const jobs = ref<Job[]>([]);
+  const data = ref<Job[]>([]);
+  const isFetching = ref(true);
+
+  const storedJobs = sessionStorage.getItem("jobs");
+  if (storedJobs) {
+    data.value = JSON.parse(storedJobs);
+    isFetching.value = false;
+  }
 
   /**
    * Fetch jobs from a JSON as mock API
    */
-  const fetchJobs = async () => {
-    jobs.value = await $fetch<Job[]>("/data/jobs.json").catch(() => []);
+  const fetchData = async () => {
+    isFetching.value = true;
+    data.value = await $fetch<Job[]>("/data/jobs.json").catch(() => []);
+    sessionStorage.setItem("jobs", JSON.stringify(data.value));
+    isFetching.value = false;
   };
 
   /**
    * Fetch jobs when the store is first initialized only or when the jobs array is empty
    */
-  watch(jobs, async () => {
-    if (jobs.value.length) return;
-    await fetchJobs();
-  }, { immediate: true });
+  if (!data.value.length) void fetchData();
+
 
   /**
    * Filters for the jobs
@@ -30,7 +38,7 @@ export const useJobsStore = defineStore("jobs", () => {
   /**
    * Filter jobs based on filters
    */
-  const filteredJobs = computed(() => jobs.value.filter((job) => {
+  const filteredJobs = computed(() => data.value.filter((job) => {
     if (!filters.value.search) return true;
     const titleMatch = job.title.toLowerCase().includes(filters.value.search.toLowerCase());
     const tagsMatch = job.tags.some((tag) => tag.toLowerCase().includes(filters.value.search.toLowerCase()));
@@ -45,5 +53,10 @@ export const useJobsStore = defineStore("jobs", () => {
     filters.value = { ...newFilters };
   };
 
-  return { jobs: filteredJobs, fetchJobs, applyFilters };
+  return {
+    data: filteredJobs,
+    isFetching,
+    fetchData,
+    applyFilters
+  };
 });
