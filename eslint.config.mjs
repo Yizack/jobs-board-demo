@@ -36,6 +36,20 @@ export default defineConfigWithVueTs(
         "@stylistic/no-multi-spaces": "error",
         "@stylistic/space-before-blocks": "error",
         "@stylistic/no-trailing-spaces": "error",
+        "@stylistic/array-bracket-spacing": ["error", "never"],
+        "@stylistic/block-spacing": ["error", "always"],
+        "@stylistic/comma-spacing": ["error", { after: true, before: false }],
+        "@stylistic/comma-style": ["error", "last"],
+        "@stylistic/key-spacing": ["error", { afterColon: true, beforeColon: false }],
+        "@stylistic/keyword-spacing": ["error", { after: true, before: true }],
+        "@stylistic/object-curly-newline": "off",
+        "@stylistic/object-curly-spacing": ["error", "always"],
+        "@stylistic/object-property-newline": ["error", { allowMultiplePropertiesPerLine: true }],
+        "@stylistic/one-component-per-file": "off",
+        "@stylistic/require-default-prop": "off",
+        "@stylistic/space-in-parens": ["error", "never"],
+        "@stylistic/template-curly-spacing": "error",
+        "@stylistic/quote-props": ["error", "consistent-as-needed"],
         "vue/first-attribute-linebreak": ["error", { singleline: "ignore", multiline: "ignore" }],
         "vue/max-attributes-per-line": ["error", { singleline: 100 }],
         "vue/singleline-html-element-content-newline": ["off"],
@@ -45,5 +59,13 @@ export default defineConfigWithVueTs(
         "vue/multiline-html-element-content-newline": ["error", { ignores: [] }]
       }
     }
-  ]
+  ],
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname
+      }
+    }
+  }
 );
