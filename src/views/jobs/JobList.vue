@@ -11,20 +11,22 @@ const jobs = useJobsStore();
 <template>
   <main>
     <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 md:col-span-4 lg:col-span-2">
+      <div class="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-2">
         <JobFilters />
       </div>
-      <div class="col-span-12 md:col-span-8 lg:col-span-10">
+      <div class="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10">
         <div class="flex flex-col gap-3">
-          <TransitionGroup v-if="jobs.data.length" name="list">
-            <JobCard v-for="job of jobs.data" :key="job.id" :job="job" />
-          </TransitionGroup>
+          <template v-if="jobs.data.length">
+            <TransitionGroup name="list">
+              <JobCard v-for="job of jobs.data" :key="job.id" :job="job" />
+            </TransitionGroup>
+          </template>
           <template v-else-if="jobs.isFetching">
             <JobCardSkeleton v-for="n of 6" :key="n" />
           </template>
           <div v-else class="col-12">
-            <div class="bg-primary rounded-lg p-4 flex gap-2" role="alert">
-              <Icon icon="tabler:alert-triangle" class="text-2xl" />
+            <div class="bg-body-secondary rounded-lg p-4 flex gap-2" role="alert">
+              <Icon icon="tabler:alert-triangle" class="text-2xl text-primary" />
               <span>No matching jobs found.</span>
             </div>
           </div>

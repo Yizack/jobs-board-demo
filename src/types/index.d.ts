@@ -13,6 +13,7 @@ declare global {
   interface JobFilters {
     search: string;
     remote: boolean;
+    posted: number;
   }
 }
 

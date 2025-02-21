@@ -55,7 +55,9 @@ export default defineConfigWithVueTs([
       "vue/first-attribute-linebreak": ["error", { singleline: "ignore", multiline: "ignore" }],
       "vue/max-attributes-per-line": ["error", { singleline: 100 }],
       "vue/singleline-html-element-content-newline": ["off"]
-    },
+    }
+  },
+  {
     languageOptions: {
       parserOptions: {
         projectService: true,

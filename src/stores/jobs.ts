@@ -33,7 +33,8 @@ export const useJobsStore = defineStore("jobs", () => {
    */
   const initialFilters: JobFilters = {
     search: "",
-    remote: false
+    remote: false,
+    posted: 0
   };
   const filters = ref<JobFilters>({ ...initialFilters });
 
