@@ -1,20 +1,29 @@
 <script setup lang="ts">
 defineProps<{
-  modelValue: string;
+  modelValue: boolean;
+  id: string;
+  label: string;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
 
 const updateValue = (event: Event) => {
-  const value = (event.target as HTMLInputElement).value;
+  const value = (event.target as HTMLInputElement).checked;
   emit("update:modelValue", value);
 };
 </script>
 
 <template>
-  <label class="inline-flex items-center cursor-pointer">
-    <input type="checkbox" class="sr-only peer" role="switch" @input="updateValue">
-    <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600" />
-    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+  <label class="relative inline-flex items-center" :for="id">
+    <input
+      :id="id"
+      type="checkbox"
+      class="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md cursor-pointer"
+      role="switch"
+      :checked="modelValue || undefined"
+      @input="updateValue"
+    >
+    <span class="w-10 flex items-center flex-shrink-0 p-1 bg-gray-300 rounded-full duration-300 ease-in-out peer-checked:bg-blue-500 peer-checked:dark:bg-blue-300 after:w-4 after:h-4 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-4 group-hover:after:translate-x-1" />
+    <span class="ms-2">{{ label }}</span>
   </label>
 </template>

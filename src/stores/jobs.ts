@@ -31,32 +31,36 @@ export const useJobsStore = defineStore("jobs", () => {
   /**
    * Filters for the jobs
    */
-  const filters = ref<JobFilters>({
-    search: ""
-  });
+  const initialFilters: JobFilters = {
+    search: "",
+    remote: false
+  };
+  const filters = ref<JobFilters>({ ...initialFilters });
 
   /**
-   * Filter jobs based on filters
+   * Computed property to filter jobs based on the search query
    */
   const filteredJobs = computed(() => data.value.filter((job) => {
-    if (!filters.value.search) return true;
     const titleMatch = job.title.toLowerCase().includes(filters.value.search.toLowerCase());
     const tagsMatch = job.tags.some((tag) => tag.toLowerCase().includes(filters.value.search.toLowerCase()));
-    return titleMatch || tagsMatch;
+    const remoteMatch = !filters.value.remote || job.location.toLowerCase().includes("remote");
+    return (!filters.value.search || titleMatch || tagsMatch) && remoteMatch;
   }));
 
-  /**
-   * Apply new filters
-   * @param newFilters
-   */
   const applyFilters = (newFilters: JobFilters) => {
     filters.value = { ...newFilters };
+  };
+
+  const resetFilters = () => {
+    filters.value = { ...initialFilters };
   };
 
   return {
     data: filteredJobs,
     isFetching,
     fetchData,
-    applyFilters
+    filters,
+    applyFilters,
+    resetFilters
   };
 });

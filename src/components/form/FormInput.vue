@@ -19,17 +19,13 @@ const updateValue = (event: Event) => {
     <input
       :id="id"
       type="text"
-      :value="modelValue"
       class="w-full rounded-lg border border-gray-300 bg-transparent text-sm text-body placeholder-transparent focus:border-blue-300 focus:outline-none dark:border-gray-600"
       :class="floating ? 'peer px-4 pt-4 pb-1.5 h-14' : 'p-2.5'"
       placeholder=""
+      :value="modelValue || undefined"
       @input="updateValue"
     >
-    <label
-      v-if="floating"
-      :for="id"
-      class="absolute start-4 top-1.5 text-xs text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-blue-600 dark:peer-focus:text-blue-300"
-    >
+    <label v-if="floating" :for="id" class="absolute start-4 top-1.5 text-xs text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-xs peer-focus:text-blue-600 dark:peer-focus:text-blue-300">
       {{ label }}
     </label>
   </div>

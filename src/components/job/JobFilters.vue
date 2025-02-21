@@ -1,19 +1,23 @@
 <script setup lang="ts">
 import FormInput from "~/components/form/FormInput.vue";
-import { ref, watch } from "vue";
+import FormSwitch from "~/components/form/FormSwitch.vue";
+import { watch } from "vue";
 import { useJobsStore } from "~/stores/jobs";
 
-const filters = ref({
-  search: ""
-});
+const jobs = useJobsStore();
 
-const jobsStore = useJobsStore();
-
-watch(filters, (value) => {
-  jobsStore.applyFilters(value);
+watch(jobs.filters, (value) => {
+  jobs.applyFilters(value);
 }, { deep: true });
 </script>
 
 <template>
-  <FormInput id="search" v-model="filters.search" label="Search" floating />
+  <div class="text-body flex flex-col gap-2">
+    <div class="flex justify-between items-center">
+      <h2 class="text-lg font-semibold">Filters</h2>
+      <button class="text-sm text-blue-500 cursor-pointer" @click="jobs.resetFilters()">Clear</button>
+    </div>
+    <FormInput id="search" v-model="jobs.filters.search" label="Search" floating />
+    <FormSwitch id="fullTime" v-model="jobs.filters.remote" label="Remote" />
+  </div>
 </template>
