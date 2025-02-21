@@ -5,7 +5,9 @@
     "company": "TechCorp",
     "description": "We're looking for a Vue.js developer with 3+ years of experience in building modern web applications. The ideal candidate should have strong knowledge of Vue.js ecosystem, TypeScript, and modern frontend development practices.",
     "location": "Remote",
-    "title": "Frontend Developer"
+    "title": "Frontend Developer",
+    "tags": ["Vue.js", "TypeScript", "Frontend", "Web Development"],
+    "timestamp": 1740118379894
   },
   {
     "id": 2,
@@ -13,7 +15,9 @@
     "company": "DevFirm",
     "description": "Looking for a Node.js expert to join our growing team. You'll be responsible for designing and implementing scalable APIs, working with databases, and maintaining our server infrastructure.",
     "location": "New York",
-    "title": "Backend Developer"
+    "title": "Backend Developer",
+    "tags": ["Node.js", "Express", "Backend", "API", "Database"],
+    "timestamp": 1740118379894
   },
   {
     "id": 3,
@@ -21,7 +25,9 @@
     "company": "StartupX",
     "description": "Join our dynamic team as a Full Stack Engineer. You'll work with Vue.js on the frontend and Node.js on the backend to build and maintain our core product.",
     "location": "San Francisco",
-    "title": "Full Stack Engineer"
+    "title": "Full Stack Engineer",
+    "tags": ["Vue.js", "Node.js", "Fullstack", "Web Development"],
+    "timestamp": 1740118379894
   },
   {
     "id": 4,
@@ -29,7 +35,9 @@
     "company": "CloudTech",
     "description": "We're seeking a DevOps Engineer to help us automate our deployment processes and maintain our cloud infrastructure using AWS and modern CI/CD practices.",
     "location": "Remote",
-    "title": "DevOps Engineer"
+    "title": "DevOps Engineer",
+    "tags": ["DevOps", "AWS", "CI/CD", "Cloud"],
+    "timestamp": 1740118379894
   },
   {
     "id": 5,
@@ -37,7 +45,9 @@
     "company": "DataCorp",
     "description": "We need a Data Scientist with experience in machine learning, data analysis, and statistical modeling. Proficiency in Python and R is required.",
     "location": "Boston",
-    "title": "Data Scientist"
+    "title": "Data Scientist",
+    "tags": ["Data Science", "Machine Learning", "Python", "R"],
+    "timestamp": 1740118379894
   },
   {
     "id": 6,
@@ -45,7 +55,9 @@
     "company": "AppMakers",
     "description": "Seeking a Mobile Developer with expertise in React Native to build and maintain our mobile applications. Experience with both iOS and Android platforms is a plus.",
     "location": "Remote",
-    "title": "Mobile Developer"
+    "title": "Mobile Developer",
+    "tags": ["React Native", "Mobile Development", "iOS", "Android"],
+    "timestamp": 1740118379894
   },
   {
     "id": 7,
@@ -53,7 +65,9 @@
     "company": "SecureIT",
     "description": "Looking for a Security Engineer to help us protect our systems and data. Experience with network security, encryption, and vulnerability assessment is required.",
     "location": "Chicago",
-    "title": "Security Engineer"
+    "title": "Security Engineer",
+    "tags": ["Security", "Network Security", "Encryption", "Vulnerability Assessment"],
+    "timestamp": 1740118379894
   },
   {
     "id": 8,
@@ -61,7 +75,9 @@
     "company": "InnovateX",
     "description": "We are looking for a Product Manager to lead the development of our new software products. Experience in agile methodologies and strong communication skills are essential.",
     "location": "Seattle",
-    "title": "Product Manager"
+    "title": "Product Manager",
+    "tags": ["Product Management", "Agile", "Communication"],
+    "timestamp": 1740118379894
   },
   {
     "id": 9,
@@ -69,7 +85,9 @@
     "company": "QualityFirst",
     "description": "Join our team as a QA Engineer. You will be responsible for testing our software products, writing test cases, and ensuring the highest quality standards.",
     "location": "Austin",
-    "title": "QA Engineer"
+    "title": "QA Engineer",
+    "tags": ["QA", "Testing", "Quality Assurance"],
+    "timestamp": 1740118379894
   },
   {
     "id": 10,
@@ -77,6 +95,8 @@
     "company": "DesignHub",
     "description": "We are seeking a UI/UX Designer to create intuitive and visually appealing user interfaces. Proficiency in design tools like Sketch and Figma is required.",
     "location": "Remote",
-    "title": "UI/UX Designer"
+    "title": "UI/UX Designer",
+    "tags": ["UI/UX", "Design", "Sketch", "Figma"],
+    "timestamp": 1740118379894
   }
 ]

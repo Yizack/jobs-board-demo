@@ -6,6 +6,12 @@ declare global {
     description: string;
     location: string;
     title: string;
+    tags: string[];
+    timestamp: number;
+  }
+
+  interface JobFilters {
+    search: string;
   }
 }
 

@@ -1,7 +1,11 @@
+<script setup lang="ts">
+import NavBar from "~/components/NavBar.vue";
+</script>
+
 <template>
   <div>
-    <span>Hello World</span>
-    <div class="container-fluid py-3 flex-fill">
+    <NavBar />
+    <div class="container p-5">
       <slot />
     </div>
   </div>

@@ -1,5 +1,5 @@
-import JobList from "../views/jobs/JobDetails.vue";
-import JobDetails from "../views/jobs/JobDetails.vue";
+import JobList from "~/views/jobs/JobList.vue";
+import JobDetails from "~/views/jobs/JobDetails.vue";
 
 export const jobRoutes = [
   { path: "/jobs", name: "jobs", component: JobList },
