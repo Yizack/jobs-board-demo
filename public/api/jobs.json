@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "category": "Frontend",
+    "company": "TechCorp",
+    "description": "We're looking for a Vue.js developer with 3+ years of experience in building modern web applications. The ideal candidate should have strong knowledge of Vue.js ecosystem, TypeScript, and modern frontend development practices.",
+    "location": "Remote",
+    "title": "Frontend Developer"
+  },
+  {
+    "id": 2,
+    "category": "Backend",
+    "company": "DevFirm",
+    "description": "Looking for a Node.js expert to join our growing team. You'll be responsible for designing and implementing scalable APIs, working with databases, and maintaining our server infrastructure.",
+    "location": "New York",
+    "title": "Backend Developer"
+  },
+  {
+    "id": 3,
+    "category": "Fullstack",
+    "company": "StartupX",
+    "description": "Join our dynamic team as a Full Stack Engineer. You'll work with Vue.js on the frontend and Node.js on the backend to build and maintain our core product.",
+    "location": "San Francisco",
+    "title": "Full Stack Engineer"
+  },
+  {
+    "id": 4,
+    "category": "DevOps",
+    "company": "CloudTech",
+    "description": "We're seeking a DevOps Engineer to help us automate our deployment processes and maintain our cloud infrastructure using AWS and modern CI/CD practices.",
+    "location": "Remote",
+    "title": "DevOps Engineer"
+  },
+  {
+    "id": 5,
+    "category": "Data Science",
+    "company": "DataCorp",
+    "description": "We need a Data Scientist with experience in machine learning, data analysis, and statistical modeling. Proficiency in Python and R is required.",
+    "location": "Boston",
+    "title": "Data Scientist"
+  },
+  {
+    "id": 6,
+    "category": "Mobile",
+    "company": "AppMakers",
+    "description": "Seeking a Mobile Developer with expertise in React Native to build and maintain our mobile applications. Experience with both iOS and Android platforms is a plus.",
+    "location": "Remote",
+    "title": "Mobile Developer"
+  },
+  {
+    "id": 7,
+    "category": "Security",
+    "company": "SecureIT",
+    "description": "Looking for a Security Engineer to help us protect our systems and data. Experience with network security, encryption, and vulnerability assessment is required.",
+    "location": "Chicago",
+    "title": "Security Engineer"
+  },
+  {
+    "id": 8,
+    "category": "Product Management",
+    "company": "InnovateX",
+    "description": "We are looking for a Product Manager to lead the development of our new software products. Experience in agile methodologies and strong communication skills are essential.",
+    "location": "Seattle",
+    "title": "Product Manager"
+  },
+  {
+    "id": 9,
+    "category": "QA",
+    "company": "QualityFirst",
+    "description": "Join our team as a QA Engineer. You will be responsible for testing our software products, writing test cases, and ensuring the highest quality standards.",
+    "location": "Austin",
+    "title": "QA Engineer"
+  },
+  {
+    "id": 10,
+    "category": "UI/UX",
+    "company": "DesignHub",
+    "description": "We are seeking a UI/UX Designer to create intuitive and visually appealing user interfaces. Proficiency in design tools like Sketch and Figma is required.",
+    "location": "Remote",
+    "title": "UI/UX Designer"
+  }
+]
