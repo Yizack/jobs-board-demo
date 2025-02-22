@@ -2,6 +2,7 @@ import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import { $fetch } from "ofetch";
 import { usePagination } from "~/utils/pagination";
+import { useFormState } from "~/utils/form";
 
 export const useJobsStore = defineStore("jobs", () => {
   const data = ref<Job[]>([]);
@@ -29,12 +30,11 @@ export const useJobsStore = defineStore("jobs", () => {
 
 
   // Filters for the jobs
-  const initialFilters: JobFilters = {
+  const filters = useFormState<JobFilters>({
     search: "",
     remote: false,
     days: 0
-  };
-  const filters = ref<JobFilters>({ ...initialFilters });
+  });
 
   // Filter jobs
   const items = computed(() => {
@@ -48,7 +48,7 @@ export const useJobsStore = defineStore("jobs", () => {
   });
 
   const applyFilters = (newFilters: JobFilters) => filters.value = { ...newFilters };
-  const resetFilters = () => filters.value = { ...initialFilters };
+  const resetFilters = () => filters.reset();
 
   // Pagination for list of jobs
   const pagination = usePagination(items, { pageSize: 6 });
