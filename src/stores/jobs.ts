@@ -47,7 +47,7 @@ export const useJobsStore = defineStore("jobs", () => {
     });
   });
 
-  const applyFilters = (newFilters: JobFilters) => filters.value = { ...newFilters };
+  const applyFilters = (newFilters: JobFilters) => filters.value = { ...filters.value, ...newFilters };
   const resetFilters = () => filters.reset();
 
   // Pagination for list of jobs
