@@ -2,7 +2,7 @@
 import { RouterView } from "vue-router";
 import { useDynamicLayout } from "~/utils/layout";
 import { useColorMode } from "@vueuse/core";
-import LoadingIndicator from "./components/LoadingIndicator.vue";
+import LoadingIndicator from "~/components/LoadingIndicator.vue";
 
 useColorMode();
 

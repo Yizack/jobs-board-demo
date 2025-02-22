@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, toRefs } from "vue";
+import { computed, ref } from "vue";
 import { Icon } from "@iconify/vue";
 import { useJobsStore } from "~/stores/jobs";
 import JobCard from "~/components/job/JobCard.vue";
@@ -8,12 +8,9 @@ import { useMotionBinds } from "~/utils/motion";
 import { getShuffle } from "~/utils/helpers";
 
 const jobsStore = useJobsStore();
-const { data } = toRefs(jobsStore);
-
-const jobs = getShuffle(data.value, 9);
+const jobs = computed(() => getShuffle(jobsStore.data, 9));
 
 const searchQuery = ref();
-
 const { fadeInScale, fadeInSlideUp } = useMotionBinds();
 </script>
 
