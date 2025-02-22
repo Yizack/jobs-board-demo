@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T">
-import { watch, reactive, toRefs, type UnwrapRef } from "vue";
+import { watch, toRefs, type UnwrapRef } from "vue";
 import { Icon } from "@iconify/vue";
 import { useRoute } from "vue-router";
 import { usePagination } from "~/utils/pagination";
@@ -8,8 +8,6 @@ const props = defineProps<{
   pagination: UnwrapRef<ReturnType<typeof usePagination<T>>>;
   maxVisible: number;
 }>();
-
-const pagination = reactive(props.pagination);
 
 const {
   pageCount,
@@ -20,10 +18,9 @@ const {
   prev,
   next,
   gotToPage
-} = toRefs(pagination);
+} = toRefs(props.pagination);
 
 const { path } = useRoute();
-
 
 watch(currentPage, () => {
   const url = currentPage.value > 1 ? `${path}?p=${currentPage.value}` : path;
