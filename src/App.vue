@@ -1,24 +1,20 @@
 <script setup lang="ts">
-import { RouterView, useRoute } from "vue-router";
-import { pascalCase } from "scule";
-import { defineAsyncComponent, computed } from "vue";
+import { RouterView } from "vue-router";
+import { useDynamicLayout } from "~/utils/layout";
+import { useColorMode } from "@vueuse/core";
 
-const LayoutComponent = computed(() => {
-  const layout = useRoute().meta.layout as string || "default";
-  const layoutName = pascalCase(layout + "Layout");
-  return defineAsyncComponent(() => import(`./layouts/${layoutName}.vue`));
-});
+useColorMode();
+
+const LayoutWrapper = useDynamicLayout();
 </script>
 
 <template>
   <div>
-    <Suspense>
-      <RouterView v-if="$route.meta.layout === null" />
-      <Suspense v-else>
-        <LayoutComponent id="layout">
-          <RouterView />
-        </LayoutComponent>
-      </Suspense>
+    <Suspense v-if="$route.meta.layout === null">
+      <RouterView />
     </Suspense>
+    <LayoutWrapper v-else>
+      <RouterView />
+    </LayoutWrapper>
   </div>
 </template>
