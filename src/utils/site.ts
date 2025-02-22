@@ -1,9 +1,11 @@
-import router from "~/router";
+import { routes } from "~/router";
 
 export const SITE = {
   name: "Job Board",
-  pages: router.getRoutes().filter(route => !route.path?.toString().includes(":")).map(route => ({
-    name: route.name,
-    path: route.path
-  }))
+  get pages () {
+    return routes.filter(route => !route.path?.toString().includes(":")).map(route => ({
+      name: route.name,
+      path: route.path
+    }));
+  }
 };

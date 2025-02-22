@@ -5,13 +5,14 @@ import { useTimeAgo } from "@vueuse/core";
 
 const props = defineProps<{
   job: Job;
+  animated?: boolean;
 }>();
 
 const randomImage = `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${props.job.company}`;
 </script>
 
 <template>
-  <article class="bg-body-secondary shadow-lg rounded-xl p-3 hover:shadow-xl transition-all duration-100 border border-transparent hover:border-blue-600 dark:hover:border-blue-300 hover:border-s-9 hover:outline-blue-600 dark:hover:outline-blue-300 hover:outline-1 group">
+  <article class="bg-body-secondary shadow-lg rounded-xl p-3 hover:shadow-xl transition-all duration-100 border border-transparent hover:border-blue-600 dark:hover:border-blue-300 hover:outline-blue-600 dark:hover:outline-blue-300 hover:outline-1 group" :class="{ 'hover:border-s-9': animated }">
     <RouterLink :to="`/jobs/${job.id}`">
       <div class="flex items-start justify-between gap-4">
         <div class="flex items-start gap-4">

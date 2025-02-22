@@ -8,7 +8,7 @@ import { useJobsStore } from "~/stores/jobs";
 import { Icon } from "@iconify/vue";
 
 const jobsStore = useJobsStore();
-const { data: jobs, pagination, display, isFetching } = toRefs(jobsStore);
+const { pagination, display, isFetching } = toRefs(jobsStore);
 </script>
 
 <template>
@@ -18,10 +18,10 @@ const { data: jobs, pagination, display, isFetching } = toRefs(jobsStore);
         <JobFilters />
       </div>
       <div class="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10">
-        <div v-if="jobs.length" class="flex flex-col gap-3">
+        <div v-if="pagination.data.length" class="flex flex-col gap-3">
           <span>Displaying results {{ display.from }} to {{ display.to }} out of {{ display.total }}</span>
           <TransitionGroup name="list">
-            <JobCard v-for="job of jobs" :key="job.id" :job="job" />
+            <JobCard v-for="job of pagination.data" :key="job.id" :job="job" animated />
           </TransitionGroup>
           <ItemsPagination :pagination="pagination" :max-visible="3" class="flex justify-end" />
         </div>

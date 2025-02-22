@@ -56,8 +56,10 @@
 }
 
 .bg-primary {
+  color: var(--color-white);
   background-color: var(--color-blue-600);
   &:where(.dark, .dark *) {
+    color: var(--color-gray-900);
     background-color: var(--color-blue-300);
   }
 }
