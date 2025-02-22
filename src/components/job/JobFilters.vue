@@ -26,7 +26,7 @@ watch(jobs.filters, jobs.applyFilters, { deep: true });
       </button>
     </div>
     <FormInput id="search" v-model.trim="jobs.filters.search" type="search" label="Search" floating />
-    <FormSelect id="posted" v-model.number="jobs.filters.posted">
+    <FormSelect id="days" v-model.number="jobs.filters.days">
       <option value="0" disabled>Date posted</option>
       <option value="1">Past 24 hours</option>
       <option value="7">Past week</option>

@@ -32,7 +32,7 @@ export const useJobsStore = defineStore("jobs", () => {
   const initialFilters: JobFilters = {
     search: "",
     remote: false,
-    posted: 0
+    days: 0
   };
   const filters = ref<JobFilters>({ ...initialFilters });
 
@@ -42,7 +42,8 @@ export const useJobsStore = defineStore("jobs", () => {
       const titleMatch = job.title.toLowerCase().includes(filters.value.search.toLowerCase());
       const tagsMatch = job.tags.some((tag) => tag.toLowerCase().includes(filters.value.search.toLowerCase()));
       const remoteMatch = !filters.value.remote || job.location.toLowerCase().includes("remote");
-      return (!filters.value.search || titleMatch || tagsMatch) && remoteMatch;
+      const daysMatch = filters.value.days === 0 || new Date(job.timestamp) > new Date(Date.now() - filters.value.days * 86400 * 1000);
+      return (!filters.value.search || titleMatch || tagsMatch) && remoteMatch && daysMatch;
     });
   });
 

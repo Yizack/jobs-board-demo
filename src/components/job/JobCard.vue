@@ -30,7 +30,7 @@ const randomImage = `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${prop
               </span>
             </div>
             <div class="text-sm text-body-secondary">
-              <span class="flex items-center gap-1">
+              <span class="flex items-center gap-1" :title="new Date(job.timestamp).toISOString()">
                 <Icon icon="tabler:clock" />
                 {{ useTimeAgo(job.timestamp) }}
               </span>
