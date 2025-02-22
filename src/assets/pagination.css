@@ -1,0 +1,29 @@
+.page-link {
+  display: block;  
+  background-color: var(--color-gray-100);
+  transition: none;
+  padding: 2px 10px;
+  border: none;
+  text-decoration: none!important;
+  border-radius: var(--radius-xl);
+  &:where(.dark, .dark *) {
+    background-color: var(--color-gray-700);
+  }
+}
+
+.active>.page-link, .page-link.active, .page-link:focus, .page-link:disabled {
+  border-color: var(--bs-primary);
+}
+
+.page-link:disabled {
+  background-color: rgba(var(--bs-primary-rgb), 0.2);
+}
+
+.active>.page-link, .page-link.active, .page-link:focus {
+  color: var(--color-white);
+  background-color: var(--color-blue-600);
+  &:where(.dark, .dark *) {
+    color: var(--color-gray-900);
+    background-color: var(--color-blue-300);
+  }
+}

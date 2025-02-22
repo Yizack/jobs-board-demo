@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useJobsStore } from "~/stores/jobs";
 import JobCard from "~/components/job/JobCard.vue";
 import JobCardSkeleton from "~/components/job/JobCardSkeleton.vue";
 import JobFilters from "~/components/job/JobFilters.vue";
+import ItemsPagination from "~/components/ItemsPagination.vue";
+import { useJobsStore } from "~/stores/jobs";
 import { Icon } from "@iconify/vue";
 
 const jobs = useJobsStore();
@@ -15,20 +16,21 @@ const jobs = useJobsStore();
         <JobFilters />
       </div>
       <div class="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10">
-        <div class="flex flex-col gap-3">
-          <template v-if="jobs.data.length">
-            <TransitionGroup name="list">
-              <JobCard v-for="job of jobs.data" :key="job.id" :job="job" />
-            </TransitionGroup>
-          </template>
-          <template v-else-if="jobs.isFetching">
-            <JobCardSkeleton v-for="n of 6" :key="n" />
-          </template>
-          <div v-else class="col-12">
-            <div class="bg-body-secondary rounded-lg p-4 flex gap-2" role="alert">
-              <Icon icon="tabler:alert-triangle" class="text-2xl text-primary" />
-              <span>No matching jobs found.</span>
-            </div>
+        <div v-if="jobs.data.length" class="flex flex-col gap-3">
+          <span>Displaying results {{ jobs.display.from }} to {{ jobs.display.to }} out of {{ jobs.display.total }}</span>
+          <TransitionGroup name="list">
+            <JobCard v-for="job of jobs.data" :key="job.id" :job="job" />
+          </TransitionGroup>
+          <ItemsPagination :pagination="jobs.pagination" :max-visible="3" class="flex justify-end" />
+        </div>
+        <div v-else-if="jobs.isFetching" class="flex flex-col gap-3">
+          <div class="h-6 bg-gray-300 rounded-full animate-pulse" />
+          <JobCardSkeleton v-for="n of 6" :key="n" />
+        </div>
+        <div v-else class="col-12">
+          <div class="bg-body-secondary rounded-lg p-4 flex gap-2" role="alert">
+            <Icon icon="tabler:alert-triangle" class="text-2xl text-primary" />
+            <span>No matching jobs found.</span>
           </div>
         </div>
       </div>
