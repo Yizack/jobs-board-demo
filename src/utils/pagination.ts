@@ -38,13 +38,13 @@ export const usePagination = <T>(items: Ref<T[]>, config: { pageSize: number }) 
     currentPageSize: pagination.currentPageSize.value
   });
 
-  const gotToPage = (page: number) => pagination.currentPage.value = page;
+  const goToPage = (page: number) => pagination.currentPage.value = page;
 
   const data = computed(() => items.value.slice(sliceStart.value, sliceEnd.value));
 
   return {
     ...pagination,
     data,
-    gotToPage
+    goToPage
   };
 };
