@@ -6,6 +6,7 @@ import { createError, getCompanyLogo } from "~/utils/helpers";
 import HeaderSection from "~/components/HeaderSection.vue";
 import { computed, watch } from "vue";
 import FormInput from "~/components/form/FormInput.vue";
+import JobCard from "~/components/job/JobCard.vue";
 
 const { params } = useRoute();
 
@@ -22,6 +23,8 @@ const company = companies.find(company => company.id === job.value.company.id);
 if (!company) {
   throw createError({ message: "Company not found", statusCode: 404 });
 }
+
+const moreJobsByCompany = computed(() => jobsStore.data.filter((job) => job.company.id === company.id));
 </script>
 
 <template>
@@ -30,7 +33,7 @@ if (!company) {
   </HeaderSection>
   <main class="container my-5 p-5">
     <div class="grid grid-cols-12 gap-6">
-      <div v-motion-fade-slide-left class="col-span-12 lg:col-span-8 bg-body-secondary rounded-lg p-6">
+      <div v-motion-fade-slide-left class="col-span-12 lg:col-span-8 bg-body-secondary rounded-lg p-6 shadow-lg">
         <h2 class="text-2xl font-bold mb-4">About the job</h2>
         <p class="mb-4">{{ job.description }}</p>
         <form class="flex flex-col gap-1 rounded-lg">
@@ -40,7 +43,7 @@ if (!company) {
           <button class="w-full btn btn-primary" type="submit">Apply Now</button>
         </form>
       </div>
-      <div v-motion-fade-slide-bottom class="col-span-12 lg:col-span-4 bg-body-secondary rounded-lg p-6" :delay="50">
+      <div v-motion-fade-slide-bottom class="col-span-12 lg:col-span-4 bg-body-secondary rounded-lg p-6 shadow-lg" :delay="50">
         <h2 class="text-2xl font-bold mb-4">About the company</h2>
         <div class="flex items-center gap-4 mb-4">
           <img :src="getCompanyLogo(company.id)" alt="Company Logo" class="w-24 object-contain rounded-lg">
@@ -55,6 +58,12 @@ if (!company) {
           <p class="font-bold">Website</p>
           <a :href="company.website" target="_blank" class="text-primary hover:underline">{{ company.website }}</a>
         </div>
+      </div>
+      <div class="col-span-12 flex flex-col gap-3">
+        <h2 class="text-2xl font-bold text-center mt-4">
+          More jobs by <span class="text-primary">{{ company.name }}</span>
+        </h2>
+        <JobCard v-for="companyJob of moreJobsByCompany" :key="companyJob.id" :job="companyJob" animated />
       </div>
     </div>
   </main>
