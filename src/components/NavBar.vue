@@ -16,7 +16,9 @@ const toggleMenu = () => {
 <template>
   <div class="bg-body-secondary px-6 py-2 sticky top-0 w-full z-50 shadow-md">
     <div class="flex justify-between items-center w-full max-w-6xl mx-auto gap-4">
-      <h1 class="text-xl font-semibold">{{ SITE.name }}</h1>
+      <RouterLink to="/">
+        <h1 class="text-xl font-semibold">{{ SITE.name }}</h1>
+      </RouterLink>
       <nav class="hidden lg:flex gap-4 items-center ms-auto">
         <RouterLink v-for="(page, i) of SITE.pages" :key="i" :to="page.path" class="rounded-md px-3 py-2 font-medium hover:underline hover:dark:bg-gray-500 hover:bg-gray-300">
           {{ page.name }}
