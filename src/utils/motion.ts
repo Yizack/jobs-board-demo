@@ -1,21 +1,21 @@
 export const useMotionBinds = () => ({
-  fadeInScale: {
+  "fade-scale": {
     initial: { scale: .95, opacity: 0 },
     enter: { scale: 1, opacity: 1 }
   },
-  fadeInScaleDim: {
+  "fade-scale-dim": {
     initial: { scale: .9, opacity: 0 },
     enter: { scale: 1, opacity: .5 }
   },
-  fadeInSlideUp: {
+  "fade-slide-bottom": {
     initial: { opacity: 0, y: 100 },
     enter: { opacity: 1, y: 0 }
   },
-  fadeInSlideUpDim: {
+  "fade-slide-bottom-dim": {
     initial: { opacity: 0, y: 50 },
     enter: { opacity: 1, y: 0 }
   },
-  fadeInSlideRight: {
+  "fade-slide-left": {
     initial: { opacity: 0, x: -100 },
     enter: { opacity: 1, x: 0 }
   }

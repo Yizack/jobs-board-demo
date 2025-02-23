@@ -2,13 +2,10 @@
 import { toRefs } from "vue";
 import { Icon } from "@iconify/vue";
 import { useJobsStore } from "~/stores/jobs";
-import { useMotionBinds } from "~/utils/motion";
 import JobCard from "~/components/job/JobCard.vue";
 import JobCardSkeleton from "~/components/job/JobCardSkeleton.vue";
 import JobFilters from "~/components/job/JobFilters.vue";
 import ItemsPagination from "~/components/ItemsPagination.vue";
-
-const { fadeInSlideRight, fadeInSlideUp } = useMotionBinds();
 
 const jobsStore = useJobsStore();
 const { pagination, display, isFetching } = toRefs(jobsStore);
@@ -17,20 +14,20 @@ const { pagination, display, isFetching } = toRefs(jobsStore);
 <template>
   <main class="container p-5">
     <div class="grid grid-cols-12 gap-6">
-      <div v-motion class="col-span-12 md:col-span-4 lg:col-span-3" v-bind="fadeInSlideUp" :delay="50">
+      <div v-motion-fade-slide-bottom class="col-span-12 md:col-span-4 lg:col-span-3" :delay="50">
         <JobFilters />
       </div>
       <div class="col-span-12 md:col-span-8 lg:col-span-9">
         <div v-if="pagination.data.length" class="flex flex-col gap-3">
-          <span>Displaying results {{ display.from }} to {{ display.to }} out of {{ display.total }}</span>
+          <span v-motion-fade-slide-bottom>Displaying results {{ display.from }} to {{ display.to }} out of {{ display.total }}</span>
           <TransitionGroup name="list">
             <div v-for="(job, i) of pagination.data" :key="job.id">
-              <div v-motion v-bind="fadeInSlideRight" :delay="100 + (i + 1) * 50">
-                <JobCard v-motion :job="job" animated />
+              <div v-motion-fade-slide-left :delay="100 + (i + 1) * 50">
+                <JobCard :job="job" animated />
               </div>
             </div>
           </TransitionGroup>
-          <ItemsPagination :pagination="pagination" :max-visible="3" class="flex justify-end" />
+          <ItemsPagination v-motion-fade-slide-bottom :pagination="pagination" :max-visible="3" class="flex justify-end" />
         </div>
         <div v-else-if="isFetching" class="flex flex-col gap-3">
           <div class="h-6 bg-gray-300 rounded-full animate-pulse" />
