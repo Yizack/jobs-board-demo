@@ -13,11 +13,11 @@ const { pagination, display, isFetching } = toRefs(jobsStore);
 
 <template>
   <main>
-    <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 md:col-span-4 lg:col-span-3 xl:col-span-2">
+    <div class="grid grid-cols-12 gap-6">
+      <div class="col-span-12 md:col-span-4 lg:col-span-3">
         <JobFilters />
       </div>
-      <div class="col-span-12 md:col-span-8 lg:col-span-9 xl:col-span-10">
+      <div class="col-span-12 md:col-span-8 lg:col-span-9">
         <div v-if="pagination.data.length" class="flex flex-col gap-3">
           <span>Displaying results {{ display.from }} to {{ display.to }} out of {{ display.total }}</span>
           <TransitionGroup name="list">
