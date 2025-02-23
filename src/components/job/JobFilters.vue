@@ -26,23 +26,21 @@ if (Object.entries(query).length) {
   jobs.applyFilters({
     search: query.search?.toString() || "",
     days: Number(query?.days?.toString()) || 0,
-    remote: query?.remote === "true"
+    remote: query?.remote === "true",
+    tag: query.tag?.toString() || ""
   });
 }
 
 // Watch for filter changes and update the route query params
 watch(filters, (newFilters) => {
-  const filterParams = {} as Record<string, string>;
-
+  const currentQuery = new URLSearchParams(window.location.search);
   for (const [key, value] of Object.entries(newFilters)) {
-    if (value) filterParams[key] = value.toString();
+    if (value) currentQuery.set(key, value.toString());
+    else currentQuery.delete(key);
   }
-
-  const params = Object.entries(filterParams).length ? filterParams : undefined;
-  const queryParams = params ? "?" + new URLSearchParams(params).toString() : "";
-  const url = path + queryParams;
-
-  window.history.replaceState(null, "", url);
+  const queryParams = currentQuery.toString();
+  const url = path + (queryParams ? "?" + queryParams : "");
+  window.history.replaceState({}, "", url);
 }, { deep: true });
 </script>
 

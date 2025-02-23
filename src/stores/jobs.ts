@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 import { $fetch } from "ofetch";
 import { usePagination } from "~/utils/pagination";
 import { useFormState } from "~/utils/form";
+import { toSlug } from "~/utils/helpers";
 
 export const useJobsStore = defineStore("jobs", () => {
   const data = ref<Job[]>([]);
@@ -11,7 +12,7 @@ export const useJobsStore = defineStore("jobs", () => {
   // Get jobs data from the session storage if available as cache to avoid fetching the same data on route changes
   const storedJobs = sessionStorage.getItem("jobs");
   if (storedJobs) {
-    data.value = JSON.parse(storedJobs);
+    // data.value = JSON.parse(storedJobs);
     isFetching.value = false;
   }
 
@@ -32,7 +33,8 @@ export const useJobsStore = defineStore("jobs", () => {
   const filters = useFormState<JobFilters>({
     search: "",
     remote: false,
-    days: 0
+    days: 0,
+    tag: ""
   });
 
   // Filter jobs
@@ -42,7 +44,8 @@ export const useJobsStore = defineStore("jobs", () => {
       const tagsMatch = job.tags.some((tag) => tag.toLowerCase().includes(filters.value.search.toLowerCase()));
       const remoteMatch = !filters.value.remote || job.location.toLowerCase().includes("remote");
       const daysMatch = filters.value.days === 0 || new Date(job.timestamp) > new Date(Date.now() - filters.value.days * 86400 * 1000);
-      return (!filters.value.search || titleMatch || tagsMatch) && remoteMatch && daysMatch;
+      const tagMatch = !filters.value.tag || job.tags.some((tag) => toSlug(tag) === filters.value.tag);
+      return (!filters.value.search || titleMatch || tagsMatch) && remoteMatch && daysMatch && tagMatch;
     });
   });
 

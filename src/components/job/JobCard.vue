@@ -3,6 +3,7 @@ import { RouterLink } from "vue-router";
 import { useTimeAgo } from "@vueuse/core";
 import { Icon } from "@iconify/vue";
 import { getCompanyLogo } from "~/utils/helpers";
+import JobTags from "~/components/job/JobTags.vue";
 
 defineProps<{
   job: Job;
@@ -38,11 +39,7 @@ defineProps<{
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap gap-2 mt-2">
-        <a v-for="tag in job.tags" :key="tag" class="px-3 py-1 text-xs font-medium text-body-secondary bg-body-tertiary rounded-full">
-          {{ tag }}
-        </a>
-      </div>
+      <JobTags class="mt-2" :tags="job.tags" />
     </RouterLink>
   </article>
 </template>

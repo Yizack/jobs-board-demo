@@ -15,3 +15,13 @@ export const createError = (error: AppError) => {
   errorStore.setError(error);
   return new Error(error.message);
 };
+
+export const toSlug = (text: string) => {
+  return text
+    .trim()
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036F]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+};

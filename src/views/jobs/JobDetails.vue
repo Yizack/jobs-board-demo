@@ -1,12 +1,13 @@
 <script setup lang="ts">
+import { computed, watch } from "vue";
 import { useRoute } from "vue-router";
 import { $fetch } from "ofetch";
 import { useJobsStore } from "~/stores/jobs";
 import { createError, getCompanyLogo } from "~/utils/helpers";
 import HeaderSection from "~/components/HeaderSection.vue";
-import { computed, watch } from "vue";
 import FormInput from "~/components/form/FormInput.vue";
 import JobCard from "~/components/job/JobCard.vue";
+import JobTags from "~/components/job/JobTags.vue";
 
 const { params } = useRoute();
 
@@ -34,8 +35,11 @@ const moreJobsByCompany = computed(() => jobsStore.data.filter((job) => job.comp
   <main class="container my-5 p-5">
     <div class="grid grid-cols-12 gap-6">
       <div v-motion-fade-slide-left class="col-span-12 lg:col-span-8 bg-body-secondary rounded-lg p-6 shadow-lg">
+        <JobTags class="mb-2" :tags="job.tags" />
         <h2 class="text-2xl font-bold mb-4">About the job</h2>
         <p class="mb-4">{{ job.description }}</p>
+        <h3 class="text-lg font-bold">Location</h3>
+        <p class="mb-4">{{ job.location }}</p>
         <form class="flex flex-col gap-1 rounded-lg">
           <FormInput id="name" placeholder="Full name" floating required />
           <FormInput id="email" placeholder="Email" type="email" floating required />

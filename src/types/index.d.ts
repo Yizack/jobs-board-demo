@@ -23,6 +23,7 @@ declare global {
     search: string;
     remote: boolean;
     days: number;
+    tag: string;
   }
 
   interface AppError {
