@@ -32,6 +32,13 @@
   }
 }
 
+.text-muted {
+  color: var(--color-gray-400);
+  &:where(.dark, .dark *) {
+    color: var(--color-gray-500);
+  }
+}
+
 /* Backgrounds */
 
 .bg-body {

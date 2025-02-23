@@ -12,8 +12,8 @@ defineProps<{
 </script>
 
 <template>
-  <article class="bg-body-secondary shadow-lg rounded-xl p-3 hover:shadow-xl transition-all duration-100 border border-transparent hover:border-blue-500 dark:hover:border-blue-300 hover:outline-blue-500 dark:hover:outline-blue-300 hover:outline-1 group" :class="{ 'hover:border-s-9': animated }">
-    <RouterLink :to="`/jobs/${job.id}`">
+  <RouterLink class="group" :to="`/jobs/${job.id}`">
+    <article class="h-full bg-body-secondary shadow-lg rounded-xl p-3 hover:shadow-xl transition-all duration-100 border border-transparent hover:border-blue-500 dark:hover:border-blue-300 hover:outline-blue-500 dark:hover:outline-blue-300 hover:outline-1" :class="{ 'hover:border-s-9': animated }">
       <div class="flex items-start justify-between gap-4">
         <div class="flex items-start gap-4">
           <div class="relative w-16 h-16">
@@ -40,6 +40,6 @@ defineProps<{
         </div>
       </div>
       <JobTags class="mt-2" :tags="job.tags" />
-    </RouterLink>
-  </article>
+    </article>
+  </RouterLink>
 </template>

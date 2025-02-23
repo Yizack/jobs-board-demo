@@ -36,3 +36,7 @@ body {
   height: 100%;
   width: 100%;
 }
+
+hr {
+  margin-block: calc(var(--spacing) * 4);
+}
