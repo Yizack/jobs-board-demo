@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { computed, toRefs, watch } from "vue";
-import { useJobsStore } from "~/stores/jobs";
+import { useRoute } from "vue-router";
 import { Icon } from "@iconify/vue";
+import { useJobsStore } from "~/stores/jobs";
 import FormInput from "~/components/form/FormInput.vue";
 import FormSwitch from "~/components/form/FormSwitch.vue";
 import FormSelect from "~/components/form/FormSelect.vue";
-import { useRoute } from "vue-router";
 
 const jobs = useJobsStore();
 const { filters } = toRefs(jobs);
@@ -53,7 +53,7 @@ watch(filters, (newFilters) => {
         </button>
       </Transition>
     </div>
-    <FormInput id="search" v-model.trim="filters.search" type="search" label="Search" floating />
+    <FormInput id="search" v-model.trim="filters.search" placeholder="Search" icon="tabler:search" floating />
     <FormSelect id="days" v-model.number="filters.days">
       <option value="0" disabled>Date posted</option>
       <option value="1">Past 24 hours</option>

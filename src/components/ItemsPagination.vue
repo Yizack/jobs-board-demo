@@ -1,7 +1,7 @@
 <script setup lang="ts" generic="T">
 import { watch, toRefs, type UnwrapRef } from "vue";
-import { Icon } from "@iconify/vue";
 import { useRoute } from "vue-router";
+import { Icon } from "@iconify/vue";
 import { usePagination } from "~/utils/pagination";
 
 const props = defineProps<{

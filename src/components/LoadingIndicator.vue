@@ -1,7 +1,7 @@
 
 <script setup lang="ts">
-import { useNProgress } from "@vueuse/integrations/useNProgress";
 import { onMounted, watch } from "vue";
+import { useNProgress } from "@vueuse/integrations/useNProgress";
 
 const { isLoading, start, done } = useNProgress();
 
@@ -23,7 +23,6 @@ onMounted(() => {
 </template>
 
 <style>
-/* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
 }
@@ -41,7 +40,6 @@ onMounted(() => {
   }
 }
 
-/* Fancy blur effect */
 #nprogress .peg {
   display: block;
   position: absolute;

@@ -1,17 +1,24 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { Icon } from "@iconify/vue";
+import { useRouter } from "vue-router";
 import { useJobsStore } from "~/stores/jobs";
-import JobCard from "~/components/job/JobCard.vue";
-import HeaderSection from "~/components/HeaderSection.vue";
 import { useMotionBinds } from "~/utils/motion";
 import { getShuffle } from "~/utils/helpers";
+import JobCard from "~/components/job/JobCard.vue";
+import HeaderSection from "~/components/HeaderSection.vue";
+import FormInput from "~/components/form/FormInput.vue";
+
+const { fadeInScale, fadeInSlideUp } = useMotionBinds();
 
 const jobsStore = useJobsStore();
 const jobs = computed(() => getShuffle(jobsStore.data, 9));
 
-const searchQuery = ref();
-const { fadeInScale, fadeInSlideUp } = useMotionBinds();
+const search = ref();
+
+const router = useRouter();
+const searchJobs = () => {
+  void router.push({ path: "/jobs", query: { search: search.value } });
+};
 </script>
 
 <template>
@@ -19,18 +26,9 @@ const { fadeInScale, fadeInSlideUp } = useMotionBinds();
     <HeaderSection title="Jobs Board" description="Search from our list of available jobs">
       <!-- Search Bar -->
       <div v-motion class="max-w-2xl mx-auto" v-bind="fadeInScale" :delay="450">
-        <div class="relative group">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-primary-400 to-primary-300 rounded-xl blur opacity-50 group-hover:opacity-75 transition duration-1000" />
-          <div class="relative">
-            <Icon icon="tabler:search" class="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 z-10" />
-            <input
-              v-model="searchQuery"
-              type="text"
-              placeholder="Title, skill or company"
-              class="w-full pl-12 pr-4 py-4 rounded-xl backdrop-blur-xl border focus:border-primary-300 focus:ring-2 focus:ring-primary-300/50 outline-none transition-all duration-300"
-            >
-          </div>
-        </div>
+        <form @submit.prevent="searchJobs">
+          <FormInput id="search" v-model="search" placeholder="Title, skill or company" icon="tabler:search" emphasis />
+        </form>
       </div>
     </HeaderSection>
     <!-- Job Listings Section -->

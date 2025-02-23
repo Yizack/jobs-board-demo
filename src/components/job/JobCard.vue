@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import { Icon } from "@iconify/vue";
 import { useTimeAgo } from "@vueuse/core";
+import { Icon } from "@iconify/vue";
 
 const props = defineProps<{
   job: Job;

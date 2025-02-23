@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { toRefs } from "vue";
+import { Icon } from "@iconify/vue";
+import { useJobsStore } from "~/stores/jobs";
 import JobCard from "~/components/job/JobCard.vue";
 import JobCardSkeleton from "~/components/job/JobCardSkeleton.vue";
 import JobFilters from "~/components/job/JobFilters.vue";
 import ItemsPagination from "~/components/ItemsPagination.vue";
-import { useJobsStore } from "~/stores/jobs";
-import { Icon } from "@iconify/vue";
 
 const jobsStore = useJobsStore();
 const { pagination, display, isFetching } = toRefs(jobsStore);

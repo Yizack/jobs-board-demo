@@ -3,6 +3,7 @@
 @import "./theme.css";
 @import "./spacing.css";
 @import "./pagination.css";
+@import "./forms.css";
 
 @font-face {
   font-family: Fredoka;
