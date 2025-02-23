@@ -23,7 +23,7 @@ const searchJobs = () => {
     <!-- Search Bar -->
     <div v-motion-fade-scale class="max-w-2xl mx-auto" :delay="200">
       <form @submit.prevent="searchJobs">
-        <FormInput id="search" v-model="search" placeholder="Title, skill or company" icon="tabler:search" autocomplete="off" emphasis />
+        <FormInput id="search" v-model="search" placeholder="Title, skill or company" icon="tabler:search" autocomplete="off" transparent emphasis />
       </form>
     </div>
   </HeaderSection>
