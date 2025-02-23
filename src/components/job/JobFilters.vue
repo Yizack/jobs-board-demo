@@ -51,7 +51,7 @@ watch(filters, (newFilters) => {
     <div class="flex justify-between items-center">
       <div class="flex items-center gap-2">
         <Icon icon="tabler:filter" class="text-primary" style="font-size: 1.3rem;" />
-        <h2 class="text-lg font-semibold">Filters</h2>
+        <h2 class="text-lg font-bold">Filters</h2>
       </div>
       <Transition name="slide-right">
         <button v-if="hasFilterChanged" class="flex gap-1 items-center text-sm text-primary cursor-pointer hover:underline" @click="jobs.resetFilters()">

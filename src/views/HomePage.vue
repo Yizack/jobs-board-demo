@@ -33,7 +33,7 @@ const searchJobs = () => {
       <div class="grid gap-6  lg:grid-cols-3">
         <JobCard v-for="job of jobs" :key="job.id" :job="job" />
       </div>
-      <RouterLink to="/jobs" class="block text-center mt-4 text-primary-500 font-semibold hover:underline">View all</RouterLink>
+      <RouterLink to="/jobs" class="block text-center mt-4 text-primary-500 font-bold hover:underline">View all</RouterLink>
     </section>
   </main>
 </template>

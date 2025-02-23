@@ -1,8 +1,17 @@
 declare global {
+  interface Company {
+    id: number;
+    name: string;
+    description: string;
+    location: string;
+    employees: number;
+    website: string;
+  }
+
   interface Job {
     id: number;
     category: string;
-    company: string;
+    company: Pick<Company, "id" | "name">;
     description: string;
     location: string;
     title: string;

@@ -2,13 +2,12 @@
 import { RouterLink } from "vue-router";
 import { useTimeAgo } from "@vueuse/core";
 import { Icon } from "@iconify/vue";
+import { getCompanyLogo } from "~/utils/helpers";
 
-const props = defineProps<{
+defineProps<{
   job: Job;
   animated?: boolean;
 }>();
-
-const randomImage = `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${props.job.company}`;
 </script>
 
 <template>
@@ -17,14 +16,14 @@ const randomImage = `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${prop
       <div class="flex items-start justify-between gap-4">
         <div class="flex items-start gap-4">
           <div class="relative w-16 h-16">
-            <img :src="randomImage" :alt="`${job.company} logo`" class="w-16 h-16 object-contain rounded-lg">
+            <img :src="getCompanyLogo(job.company.id)" :alt="`${job.company.name} logo`" class="w-16 h-16 object-contain rounded-lg">
           </div>
           <div class="flex-1 mb-1">
-            <h3 class="text-lg font-semibold transition-color group-hover:text-blue-500 group-hover:dark:text-blue-300 group-hover:underline">
+            <h3 class="text-lg font-bold transition-color group-hover:text-blue-500 group-hover:dark:text-blue-300 group-hover:underline">
               {{ job.title }}
             </h3>
             <div class="flex items-center gap-2 text-sm text-body-secondary mb-1">
-              <p class="text-sm">at <span class="text-body-tertiary font-semibold">{{ job.company }}</span></p>
+              <p class="text-sm">at <span class="text-body-tertiary font-medium">{{ job.company.name }}</span></p>
               <span class="flex items-center gap-1">
                 <Icon icon="tabler:map-pin" />
                 {{ job.location }}

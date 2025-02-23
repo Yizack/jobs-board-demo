@@ -28,7 +28,6 @@ export const useJobsStore = defineStore("jobs", () => {
   // Try fetch jobs when the store is first initialized only or when the jobs array is empty
   if (!data.value.length) void fetchData();
 
-
   // Filters for the jobs
   const filters = useFormState<JobFilters>({
     search: "",

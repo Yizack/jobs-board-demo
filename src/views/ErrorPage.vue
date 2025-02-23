@@ -28,8 +28,8 @@ isLoading.value = false;
 <template>
   <div class="min-h-screen flex justify-center items-center">
     <div class="bg-body-secondary p-12 rounded-lg shadow-lg space-y-2">
-      <h1 class="text-4xl font-semibold">Error <span class="text-primary">{{ error!.statusCode }}</span></h1>
-      <h5 class="text-xl font-semibold">An error has occurred: {{ error!.message }}</h5>
+      <h1 class="text-4xl font-medium">Error <span class="text-primary">{{ error!.statusCode }}</span></h1>
+      <h5 class="text-xl font-medium">An error has occurred: {{ error!.message }}</h5>
       <p>Go back: <RouterLink to="/" class="text-primary underline">Home</RouterLink></p>
     </div>
   </div>

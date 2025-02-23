@@ -5,6 +5,7 @@
 @import "./spacing.css";
 @import "./pagination.css";
 @import "./forms.css";
+@import "./buttons.css";
 
 @font-face {
   font-family: fredoka;

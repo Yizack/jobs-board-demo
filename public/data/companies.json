@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "TechCorp",
+    "description": "TechCorp is a leading technology company specializing in innovative solutions for modern web applications. We focus on delivering high-quality software products to our clients worldwide.",
+    "location": "San Francisco, USA",
+    "website": "https://techcorp.example.com",
+    "employees": 500
+  },
+  {
+    "id": 2,
+    "name": "DevFirm",
+    "description": "DevFirm is a renowned software development company based in New York. We specialize in backend development, creating scalable APIs, and maintaining robust server infrastructures.",
+    "location": "New York, USA",
+    "website": "https://devfirm.example.com",
+    "employees": 300
+  },
+  {
+    "id": 3,
+    "name": "StartupX",
+    "description": "StartupX is a dynamic startup based in San Francisco. We are dedicated to building innovative products using the latest technologies in both frontend and backend development.",
+    "location": "San Francisco, USA",
+    "website": "https://startupx.example.com",
+    "employees": 50
+  },
+  {
+    "id": 4,
+    "name": "CloudTech",
+    "description": "CloudTech is a cloud infrastructure company that helps businesses automate their deployment processes and maintain their cloud environments using AWS and modern CI/CD practices.",
+    "location": "Austin, USA",
+    "website": "https://cloudtech.example.com",
+    "employees": 200
+  },
+  {
+    "id": 5,
+    "name": "DataCorp",
+    "description": "DataCorp is a leading data science company based in Boston. We specialize in machine learning, data analysis, and statistical modeling to help businesses make data-driven decisions.",
+    "location": "Boston, USA",
+    "website": "https://datacorp.example.com",
+    "employees": 150
+  },
+  {
+    "id": 6,
+    "name": "AppMakers",
+    "description": "AppMakers is a mobile development company that creates and maintains mobile applications for both iOS and Android platforms. We specialize in using React Native for cross-platform development.",
+    "location": "San Diego, USA",
+    "website": "https://appmakers.example.com",
+    "employees": 100
+  },
+  {
+    "id": 7,
+    "name": "SecureIT",
+    "description": "SecureIT is a security-focused company based in Chicago. We provide comprehensive security solutions, including network security, encryption, and vulnerability assessments to protect our clients' systems and data.",
+    "location": "Chicago, USA",
+    "website": "https://secureit.example.com",
+    "employees": 250
+  },
+  {
+    "id": 8,
+    "name": "InnovateX",
+    "description": "InnovateX is a product management company based in Seattle. We lead the development of new software products using agile methodologies and ensure effective communication throughout the process.",
+    "location": "Seattle, USA",
+    "website": "https://innovatex.example.com",
+    "employees": 80
+  },
+  {
+    "id": 9,
+    "name": "QualityFirst",
+    "description": "QualityFirst is a quality assurance company based in Austin. We are dedicated to testing software products, writing test cases, and ensuring the highest quality standards for our clients.",
+    "location": "Austin, USA",
+    "website": "https://qualityfirst.example.com",
+    "employees": 120
+  },
+  {
+    "id": 10,
+    "name": "DesignHub",
+    "description": "DesignHub is a UI/UX design company that creates intuitive and visually appealing user interfaces. We use tools like Sketch and Figma to deliver top-notch design solutions for our clients.",
+    "location": "Los Angeles, USA",
+    "website": "https://designhub.example.com",
+    "employees": 60
+  }
+]

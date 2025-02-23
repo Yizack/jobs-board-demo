@@ -17,8 +17,8 @@ defineProps<{
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" :class="lg ? 'py-24 sm:py-32' : 'py-8 sm:py-12'">
       <div class="text-center space-y-8">
         <div class="space-y-4">
-          <h1 v-motion-fade-slide-bottom class="text-4xl sm:text-6xl font-bold">
-            <span v-motion-slide-bottom-dim class="block" :delay="150">
+          <h1 v-motion-fade-slide-bottom-dim class="text-4xl sm:text-6xl font-bold">
+            <span class="block">
               {{ title }}
             </span>
           </h1>
