@@ -10,13 +10,11 @@ const LayoutWrapper = useDynamicLayout();
 </script>
 
 <template>
-  <div>
-    <Suspense v-if="$route.meta.layout === null">
-      <RouterView />
-    </Suspense>
-    <LayoutWrapper v-else>
-      <LoadingIndicator />
-      <RouterView />
-    </LayoutWrapper>
-  </div>
+  <Suspense v-if="$route.meta.layout === null">
+    <RouterView />
+  </Suspense>
+  <LayoutWrapper v-else>
+    <LoadingIndicator />
+    <RouterView />
+  </LayoutWrapper>
 </template>

@@ -22,15 +22,15 @@ const searchJobs = () => {
 </script>
 
 <template>
-  <main class="min-h-screen">
-    <HeaderSection title="Jobs Board" description="Search from our list of available jobs">
-      <!-- Search Bar -->
-      <div v-motion class="max-w-2xl mx-auto" v-bind="fadeInScale" :delay="200">
-        <form @submit.prevent="searchJobs">
-          <FormInput id="search" v-model="search" placeholder="Title, skill or company" icon="tabler:search" autocomplete="off" emphasis />
-        </form>
-      </div>
-    </HeaderSection>
+  <HeaderSection title="Jobs Board" description="Search from our list of available jobs" lg>
+    <!-- Search Bar -->
+    <div v-motion class="max-w-2xl mx-auto" v-bind="fadeInScale" :delay="200">
+      <form @submit.prevent="searchJobs">
+        <FormInput id="search" v-model="search" placeholder="Title, skill or company" icon="tabler:search" autocomplete="off" emphasis />
+      </form>
+    </div>
+  </HeaderSection>
+  <main>
     <!-- Job Listings Section -->
     <div v-motion class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" v-bind="fadeInSlideUp" :delay="200">
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

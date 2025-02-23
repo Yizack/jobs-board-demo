@@ -3,7 +3,7 @@ import Home from "~/views/HomePage.vue";
 import { jobRoutes } from "~/router/jobs";
 
 const routes = [
-  { path: "/", name: "Home", component: Home, meta: { layout: "home" } },
+  { path: "/", name: "Home", component: Home },
   ...jobRoutes
 ];
 
