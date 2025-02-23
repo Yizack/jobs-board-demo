@@ -1,20 +1,27 @@
 <script setup lang="ts">
+import { onErrorCaptured } from "vue";
 import { RouterView } from "vue-router";
-import { useDynamicLayout } from "~/utils/layout";
 import { useColorMode } from "@vueuse/core";
+import { useDynamicLayout } from "~/utils/layout";
+import { useErrorStore } from "~/stores/error";
 import LoadingIndicator from "~/components/LoadingIndicator.vue";
+import ErrorPage from "~/views/ErrorPage.vue";
 
 useColorMode();
 
 const LayoutWrapper = useDynamicLayout();
+const errorStore = useErrorStore();
+
+onErrorCaptured(() => false);
 </script>
 
 <template>
-  <Suspense v-if="$route.meta.layout === null">
-    <RouterView />
+  <Suspense>
+    <ErrorPage v-if="errorStore.error" />
+    <RouterView v-else-if="$route.meta.layout === null" />
+    <LayoutWrapper v-else>
+      <LoadingIndicator />
+      <RouterView />
+    </LayoutWrapper>
   </Suspense>
-  <LayoutWrapper v-else>
-    <LoadingIndicator />
-    <RouterView />
-  </LayoutWrapper>
 </template>

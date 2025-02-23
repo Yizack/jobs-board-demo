@@ -11,7 +11,7 @@ import FormInput from "~/components/form/FormInput.vue";
 const { fadeInScale, fadeInSlideUp } = useMotionBinds();
 
 const jobsStore = useJobsStore();
-const jobs = computed(() => getShuffle(jobsStore.data, 9));
+const jobs = computed(() => getShuffle(jobsStore.data, 6));
 
 const search = ref();
 
@@ -32,11 +32,11 @@ const searchJobs = () => {
   </HeaderSection>
   <main>
     <!-- Job Listings Section -->
-    <div v-motion class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" v-bind="fadeInSlideUp" :delay="200">
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <section v-motion class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" v-bind="fadeInSlideUp" :delay="200">
+      <div class="grid gap-6  lg:grid-cols-3">
         <JobCard v-for="job of jobs" :key="job.id" :job="job" />
       </div>
-      <RouterLink to="/jobs" class="block text-center mt-8 text-primary-500 font-semibold hover:underline">View all</RouterLink>
-    </div>
+      <RouterLink to="/jobs" class="block text-center mt-4 text-primary-500 font-semibold hover:underline">View all</RouterLink>
+    </section>
   </main>
 </template>

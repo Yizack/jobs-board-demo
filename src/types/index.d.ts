@@ -15,6 +15,11 @@ declare global {
     remote: boolean;
     days: number;
   }
+
+  interface AppError {
+    statusCode: number;
+    message: string;
+  }
 }
 
 export {};

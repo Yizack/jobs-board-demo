@@ -23,7 +23,7 @@ export default defineConfigWithVueTs([
       ...pluginVue.configs["vue3-strongly-recommended"].rules,
       ...pluginVue.configs["vue3-essential"].rules,
       "camelcase": ["error", { properties: "never", ignoreDestructuring: true }],
-      "no-console": ["error", { allow: ["info", "warn"] }],
+      "no-console": ["error", { allow: ["info", "warn", "error"] }],
       "@stylistic/indent": ["error", 2, { SwitchCase: 1 }],
       "@stylistic/linebreak-style": ["error", process.platform === "win32" ? "windows" : "unix"],
       "@stylistic/quotes": ["error", "double"],
