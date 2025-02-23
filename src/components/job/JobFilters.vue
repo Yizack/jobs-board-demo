@@ -14,8 +14,14 @@ const hasFilterChanged = computed(() => {
   return Object.values(filters.value).some(Boolean);
 });
 
+// Reset filters if the route has changed and filters are applied
+if (hasFilterChanged.value) {
+  jobs.resetFilters();
+}
+
 const { path, query } = useRoute();
 
+// Apply filters from route query params
 if (Object.entries(query).length) {
   jobs.applyFilters({
     search: query.search?.toString() || "",
@@ -24,6 +30,7 @@ if (Object.entries(query).length) {
   });
 }
 
+// Watch for filter changes and update the route query params
 watch(filters, (newFilters) => {
   const filterParams = {} as Record<string, string>;
 
