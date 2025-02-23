@@ -11,7 +11,8 @@
     "test:e2e": "playwright test",
     "test:types": "vue-tsc --noEmit",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix",
+    "job:dates": "tsx scripts/randomJobDates"
   },
   "dependencies": {
     "pinia": "^3.0.1",
@@ -41,6 +42,7 @@
     "nprogress": "^0.2.0",
     "ofetch": "^1.4.1",
     "tailwindcss": "^4.0.7",
+    "tsx": "^4.19.3",
     "typescript": "^5.7.3",
     "vite": "^6.1.1",
     "vite-plugin-vue-devtools": "^7.7.2",
