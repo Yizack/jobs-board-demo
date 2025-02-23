@@ -12,7 +12,7 @@
   }
   
   &:focus {
-    border-color: var(--color-blue-600);
+    border-color: var(--color-blue-500);
     &:where(.dark, .dark *) {
       border-color: var(--color-blue-300);
     }
@@ -63,7 +63,7 @@
 
   &:is(:where(.peer):focus ~ *) {
     top: calc(var(--spacing) * 1.5);
-    color: var(--color-blue-600);
+    color: var(--color-blue-500);
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
     &:where(.dark, .dark *) {

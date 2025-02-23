@@ -13,8 +13,8 @@ const { fadeInScaleDim, fadeInSlideUp, fadeInSlideUpDim } = useMotionBinds();
   <section class="relative overflow-hidden bg-primary">
     <!-- Decorative shapes -->
     <div class="absolute inset-0 overflow-hidden opacity-30">
-      <div v-motion class="absolute -left-1/4 -top-1/2 w-1/2 h-3/4 rounded-full bg-body" v-bind="fadeInScaleDim" :delay="200" />
-      <div v-motion class="absolute -right-1/4 -bottom-1/2 w-1/2 h-3/4 rounded-full bg-body" v-bind="fadeInScaleDim" :delay="300" />
+      <div v-motion class="absolute -left-1/4 -top-1/2 w-1/2 h-3/4 rounded-full bg-body" v-bind="fadeInScaleDim" :delay="400" />
+      <div v-motion class="absolute -right-1/4 -bottom-1/2 w-1/2 h-3/4 rounded-full bg-body" v-bind="fadeInScaleDim" :delay="500" />
     </div>
     <!-- Title and description -->
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
@@ -25,7 +25,7 @@ const { fadeInScaleDim, fadeInSlideUp, fadeInSlideUpDim } = useMotionBinds();
               {{ title }}
             </span>
           </h1>
-          <p v-motion class="max-w-2xl mx-auto text-xl" v-bind="fadeInSlideUpDim" :delay="300">
+          <p v-motion class="max-w-2xl mx-auto text-xl" v-bind="fadeInSlideUpDim" :delay="200">
             {{ description }}
           </p>
         </div>

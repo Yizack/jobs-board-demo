@@ -12,7 +12,7 @@ const randomImage = `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${prop
 </script>
 
 <template>
-  <article class="bg-body-secondary shadow-lg rounded-xl p-3 hover:shadow-xl transition-all duration-100 border border-transparent hover:border-blue-600 dark:hover:border-blue-300 hover:outline-blue-600 dark:hover:outline-blue-300 hover:outline-1 group" :class="{ 'hover:border-s-9': animated }">
+  <article class="bg-body-secondary shadow-lg rounded-xl p-3 hover:shadow-xl transition-all duration-100 border border-transparent hover:border-blue-500 dark:hover:border-blue-300 hover:outline-blue-500 dark:hover:outline-blue-300 hover:outline-1 group" :class="{ 'hover:border-s-9': animated }">
     <RouterLink :to="`/jobs/${job.id}`">
       <div class="flex items-start justify-between gap-4">
         <div class="flex items-start gap-4">
@@ -20,7 +20,7 @@ const randomImage = `https://api.dicebear.com/9.x/bottts-neutral/svg?seed=${prop
             <img :src="randomImage" :alt="`${job.company} logo`" class="w-16 h-16 object-contain rounded-lg">
           </div>
           <div class="flex-1 mb-1">
-            <h3 class="text-lg font-semibold transition-color group-hover:text-blue-600 group-hover:dark:text-blue-300 group-hover:underline">
+            <h3 class="text-lg font-semibold transition-color group-hover:text-blue-500 group-hover:dark:text-blue-300 group-hover:underline">
               {{ job.title }}
             </h3>
             <div class="flex items-center gap-2 text-sm text-body-secondary mb-1">

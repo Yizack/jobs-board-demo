@@ -34,7 +34,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-blue-600);
+  background-color: var(--color-blue-500);
   &:where(.dark, .dark *) {
     background-color: var(--color-blue-300);
   }
@@ -52,7 +52,7 @@ onMounted(() => {
   -ms-transform: rotate(3deg) translate(0px, -4px);
   transform: rotate(3deg) translate(0px, -4px);
 
-  box-shadow: 0 0 10px var(--color-blue-600), 0 0 5px var(--color-blue-600);
+  box-shadow: 0 0 10px var(--color-blue-500), 0 0 5px var(--color-blue-500);
   &:where(.dark, .dark *) {
     box-shadow: 0 0 10px var(--color-blue-300), 0 0 5px var(--color-blue-300);
   }

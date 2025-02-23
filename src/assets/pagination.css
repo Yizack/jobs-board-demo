@@ -21,7 +21,7 @@
 
 .active>.page-link, .page-link.active, .page-link:focus {
   color: var(--color-white);
-  background-color: var(--color-blue-600);
+  background-color: var(--color-blue-500);
   &:where(.dark, .dark *) {
     color: var(--color-gray-900);
     background-color: var(--color-blue-300);
