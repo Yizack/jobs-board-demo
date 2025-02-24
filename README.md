@@ -1,6 +1,8 @@
+![Jobs Board](/public//images/cover.jpg)
+
 # Jobs Board
 
-A simple jobs board application built with Vue 3.
+A simple jobs board web application built with Vue 3, Vite, Tailwind CSS, and Pinia.
 
 ## Quick Setup
 
