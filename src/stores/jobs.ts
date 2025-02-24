@@ -46,22 +46,11 @@ export const useJobsStore = defineStore("jobs", () => {
     });
   });
 
-  const applyFilters = (newFilters: JobFilters) => filters.value = { ...filters.value, ...newFilters };
+  const applyFilters = (newFilters: Partial<JobFilters>) => filters.value = { ...filters.value, ...newFilters };
   const resetFilters = () => filters.reset();
 
   // Pagination for list of jobs
   const pagination = usePagination(filteredData, { pageSize: 6 });
-
-  const display = computed(() => {
-    const currentPage = pagination.currentPage.value;
-    const pageSize = pagination.currentPageSize.value;
-    const isInRange = currentPage <= pagination.pageCount.value && currentPage > 0;
-    return {
-      total: Object.values(filters.value).some(Boolean) ? filteredData.value.length : data.value.length,
-      from: isInRange ? (currentPage - 1) * pageSize + 1 : 0,
-      to: isInRange ? Math.min(currentPage * pageSize, filteredData.value.length) : 0
-    };
-  });
 
   return {
     data,
@@ -70,7 +59,6 @@ export const useJobsStore = defineStore("jobs", () => {
     filters,
     applyFilters,
     resetFilters,
-    pagination,
-    display
+    pagination
   };
 });

@@ -8,7 +8,7 @@ import JobFilters from "~/components/job/JobFilters.vue";
 import ItemsPagination from "~/components/ItemsPagination.vue";
 
 const jobsStore = useJobsStore();
-const { pagination, display, isFetching } = toRefs(jobsStore);
+const { pagination, isFetching } = toRefs(jobsStore);
 </script>
 
 <template>
@@ -19,7 +19,14 @@ const { pagination, display, isFetching } = toRefs(jobsStore);
       </div>
       <div class="col-span-12 md:col-span-8 lg:col-span-9">
         <div v-if="pagination.data.length" class="flex flex-col gap-3">
-          <span v-motion-fade-slide-bottom>Displaying results {{ display.from }} to {{ display.to }} out of {{ display.total }}</span>
+          <span v-motion-fade-slide-bottom>
+            Displaying results
+            <span class="text-primary font-medium">{{ pagination.display.from }}</span>
+            to
+            <span class="text-primary font-medium">{{ pagination.display.to }}</span>
+            out of
+            <span class="text-primary font-medium">{{ pagination.display.total }}</span>
+          </span>
           <TransitionGroup name="list">
             <div v-for="(job, i) of pagination.data" :key="job.id">
               <div v-motion-fade-slide-left :delay="100 + (i + 1) * 50">

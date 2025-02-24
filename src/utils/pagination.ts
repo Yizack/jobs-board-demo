@@ -42,9 +42,21 @@ export const usePagination = <T>(items: Ref<T[]>, config: { pageSize: number }) 
 
   const data = computed(() => items.value.slice(sliceStart.value, sliceEnd.value));
 
+  const display = computed(() => {
+    const currentPage = pagination.currentPage.value;
+    const pageSize = pagination.currentPageSize.value;
+    const isInRange = currentPage <= pagination.pageCount.value && currentPage > 0;
+    return {
+      total: totalItems.value,
+      from: isInRange ? (currentPage - 1) * pageSize + 1 : 0,
+      to: isInRange ? Math.min(currentPage * pageSize, items.value.length) : 0
+    };
+  });
+
   return {
     ...pagination,
     data,
+    display,
     goToPage
   };
 };
