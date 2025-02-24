@@ -3,6 +3,7 @@ import { useRoute } from "vue-router";
 import { $fetch } from "ofetch";
 import { useJobsStore } from "~/stores/jobs";
 import { createError, getCompanyLogo } from "~/utils/helpers";
+import { useFormState } from "~/utils/form";
 import HeaderSection from "~/components/HeaderSection.vue";
 import FormInput from "~/components/form/FormInput.vue";
 import JobCard from "~/components/job/JobCard.vue";
@@ -23,6 +24,19 @@ if (!company) {
 }
 
 const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id);
+
+const form = useFormState({
+  name: "",
+  email: "",
+  linkedin: ""
+});
+
+// Submit application (In a real-world scenario, this would be sent to a backend)
+const applyToJob = () => {
+  alert("Application submitted test");
+  console.info(form.value);
+  form.reset();
+};
 </script>
 
 <template>
@@ -39,11 +53,11 @@ const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === comp
           <h3 class="text-lg font-bold">Location</h3>
           <p>{{ job.location }}</p>
           <hr class="text-muted">
-          <form class="flex flex-col gap-2 rounded-lg">
+          <form class="flex flex-col gap-2 rounded-lg" @submit.prevent="applyToJob">
             <h3 class="text-lg font-bold">Fill in the form to apply</h3>
-            <FormInput id="name" placeholder="Full name" floating required />
-            <FormInput id="email" placeholder="Email" type="email" floating required />
-            <FormInput id="linkedin" placeholder="LinkedIn URL" icon="simple-icons:linkedin" type="url" floating required />
+            <FormInput id="name" v-model.trim="form.name" placeholder="Full name" floating required />
+            <FormInput id="email" v-model.trim="form.email" placeholder="Email" type="email" floating required />
+            <FormInput id="linkedin" v-model.trim="form.linkedin" placeholder="LinkedIn URL" icon="simple-icons:linkedin" type="url" floating required />
             <button class="w-full btn btn-primary" type="submit">Apply Now</button>
           </form>
         </div>
@@ -61,7 +75,7 @@ const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === comp
           </div>
           <p class="mb-4">{{ company.description }}</p>
           <hr class="text-muted">
-          <div class="mb-4">
+          <div>
             <p class="font-bold">Website</p>
             <a :href="company.website" target="_blank" class="text-primary hover:underline">{{ company.website }}</a>
           </div>
