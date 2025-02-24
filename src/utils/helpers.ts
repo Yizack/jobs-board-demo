@@ -1,3 +1,4 @@
+import type { RouteLocationNormalized, NavigationGuardNext } from "vue-router";
 import { useErrorStore } from "~/stores/error";
 
 export const getCompanyLogo = (company: number) => {
@@ -24,4 +25,13 @@ export const toSlug = (text: string) => {
     .replace(/[\u0300-\u036F]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
+};
+
+export const defineRouteMiddleware = (
+  middleware: (to?: RouteLocationNormalized, from?: RouteLocationNormalized) => Promise<void>
+) => {
+  return async function (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) {
+    await middleware(to, from);
+    next();
+  };
 };

@@ -16,10 +16,10 @@ onErrorCaptured(() => false);
 </script>
 
 <template>
+  <LoadingIndicator />
   <ErrorPage v-if="errorStore.error" />
   <RouterView v-else-if="$route.meta.layout === null" />
   <LayoutWrapper v-else>
-    <LoadingIndicator />
     <Suspense>
       <RouterView />
     </Suspense>

@@ -12,7 +12,7 @@ export const useJobsStore = defineStore("jobs", () => {
   // Get jobs data from the session storage if available as cache to avoid fetching the same data on route changes
   const storedJobs = sessionStorage.getItem("jobs");
   if (storedJobs) {
-    // data.value = JSON.parse(storedJobs);
+    data.value = JSON.parse(storedJobs);
     isFetching.value = false;
   }
 
@@ -25,9 +25,6 @@ export const useJobsStore = defineStore("jobs", () => {
     sessionStorage.setItem("jobs", JSON.stringify(data.value));
     isFetching.value = false;
   };
-
-  // Try fetch jobs when the store is first initialized only or when the jobs array is empty
-  if (!data.value.length) void fetchData();
 
   // Filters for the jobs
   const filters = useFormState<JobFilters>({

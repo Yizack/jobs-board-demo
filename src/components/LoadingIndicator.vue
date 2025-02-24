@@ -1,6 +1,7 @@
 
 <script setup lang="ts">
-import { onMounted, watch } from "vue";
+import { watch } from "vue";
+import { useRouter } from "vue-router";
 import { useNProgress } from "@vueuse/integrations/useNProgress";
 
 const { isLoading, start, done } = useNProgress();
@@ -12,7 +13,11 @@ watch(isLoading, (loading) => {
   else done();
 });
 
-onMounted(() => {
+const router = useRouter();
+
+router.beforeResolve((to, from, next) => {
+  isLoading.value = true;
+  next();
   isLoading.value = false;
 });
 </script>

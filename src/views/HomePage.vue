@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { useJobsStore } from "~/stores/jobs";
 import { getShuffle } from "~/utils/helpers";
@@ -8,13 +8,13 @@ import HeaderSection from "~/components/HeaderSection.vue";
 import FormInput from "~/components/form/FormInput.vue";
 
 const jobsStore = useJobsStore();
-const jobs = computed(() => getShuffle(jobsStore.data, 6));
+const jobs = getShuffle(jobsStore.data, 6);
 
 const search = ref();
 
 const router = useRouter();
-const searchJobs = () => {
-  void router.push({ path: "/jobs", query: { search: search.value } });
+const searchJobs = async () => {
+  await router.push({ path: "/jobs", query: { search: search.value } });
 };
 </script>
 

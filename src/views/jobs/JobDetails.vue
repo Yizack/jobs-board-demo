@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed, watch } from "vue";
 import { useRoute } from "vue-router";
 import { $fetch } from "ofetch";
 import { useJobsStore } from "~/stores/jobs";
@@ -12,20 +11,18 @@ import JobTags from "~/components/job/JobTags.vue";
 const { params } = useRoute();
 
 const jobsStore = useJobsStore();
-const job = computed(() => jobsStore.data.find((job) => job.id === Number(params.id))!);
+const job = jobsStore.data.find((job) => job.id === Number(params.id));
 
-watch(jobsStore.data, () => {
-  if (!job.value) throw createError({ message: "Job not found", statusCode: 404 });
-});
+if (!job) throw createError({ message: "Job not found", statusCode: 404 });
 
 const companies = await $fetch<Company[]>("/data/companies.json");
-const company = companies.find(company => company.id === job.value.company.id);
+const company = companies.find((company) => company.id === job.company.id);
 
 if (!company) {
   throw createError({ message: "Company not found", statusCode: 404 });
 }
 
-const moreJobsByCompany = computed(() => jobsStore.data.filter((job) => job.company.id === company.id));
+const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id);
 </script>
 
 <template>
@@ -74,7 +71,7 @@ const moreJobsByCompany = computed(() => jobsStore.data.filter((job) => job.comp
         <h2 class="text-2xl font-bold text-center mt-4">
           More jobs by <span class="text-primary">{{ company.name }}</span>
         </h2>
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid lg:grid-cols-3 gap-6">
           <JobCard v-for="companyJob of moreJobsByCompany" :key="companyJob.id" :job="companyJob" animated />
         </div>
       </div>
