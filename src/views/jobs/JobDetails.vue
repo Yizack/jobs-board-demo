@@ -29,7 +29,7 @@ const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === comp
   <HeaderSection :title="job.title" :description="`at ${job.company.name}`">
     <RouterLink v-motion-fade-scale to="/jobs" class="font-bold hover:underline" :delay="200">Back to jobs</RouterLink>
   </HeaderSection>
-  <main class="container my-5 p-5">
+  <main class="container py-10">
     <div class="grid grid-cols-12 gap-6">
       <div v-motion-fade-slide-left class="col-span-12 lg:col-span-8">
         <div class="bg-body-secondary rounded-lg p-6 shadow-lg">

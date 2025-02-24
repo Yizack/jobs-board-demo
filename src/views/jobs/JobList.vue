@@ -12,7 +12,7 @@ const { pagination, isFetching } = toRefs(jobsStore);
 </script>
 
 <template>
-  <main class="container p-5">
+  <main class="container py-10">
     <div class="grid grid-cols-12 gap-6">
       <div v-motion-fade-slide-bottom class="col-span-12 md:col-span-4 lg:col-span-3" :delay="50">
         <JobFilters />
