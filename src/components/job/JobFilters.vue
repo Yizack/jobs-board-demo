@@ -67,7 +67,7 @@ watch(filters, (newFilters) => {
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div>
     <div class="flex justify-between items-center">
       <div class="flex items-center gap-2">
         <Icon icon="tabler:filter" class="text-primary" style="font-size: 1.3rem;" />
@@ -80,24 +80,26 @@ watch(filters, (newFilters) => {
         </button>
       </Transition>
     </div>
-    <hr class="text-muted">
-    <FormInput id="search" v-model.trim="filters.search" placeholder="Search" icon="tabler:search" autocomplete="off" floating />
-    <FormSelect id="days" v-model.number="filters.days">
-      <option value="0" disabled>Date posted</option>
-      <option value="1">Past 24 hours</option>
-      <option value="7">Past week</option>
-      <option value="28">Past month</option>
-    </FormSelect>
-    <div class="relative">
-      <FormInput id="tag" v-model="tagSearch" placeholder="Tags" icon="tabler:tag" autocomplete="off" floating />
-      <FormAutocomplete v-if="tagSearch" :items="availableTags" @select="addTag" />
-    </div>
-    <FormSwitch id="remote" v-model="filters.remote" class="mt-2" label="Remote only" />
-    <div class="flex flex-wrap gap-2 mt-2">
-      <button v-for="tag in filters.tags" :key="tag" class="px-3 py-1 text-xs font-medium text-body-secondary bg-body-tertiary rounded-full cursor-pointer" @click="removeTag(tag)">
-        <span>{{ tag }}</span>
-        <span class="ml-1 text-xs text-body-tertiary">x</span>
-      </button>
+    <div class="flex flex-col gap-2">
+      <hr class="text-muted">
+      <FormInput id="search" v-model.trim="filters.search" placeholder="Search" icon="tabler:search" autocomplete="off" floating />
+      <FormSelect id="days" v-model.number="filters.days">
+        <option value="0" disabled>Date posted</option>
+        <option value="1">Past 24 hours</option>
+        <option value="7">Past week</option>
+        <option value="28">Past month</option>
+      </FormSelect>
+      <div class="relative">
+        <FormInput id="tag" v-model="tagSearch" placeholder="Tags" icon="tabler:tag" autocomplete="off" floating />
+        <FormAutocomplete v-if="tagSearch" :items="availableTags" @select="addTag" />
+      </div>
+      <FormSwitch id="remote" v-model="filters.remote" class="mt-2" label="Remote only" />
+      <div v-if="filters.tags" class="flex flex-wrap gap-2 mt-2">
+        <button v-for="tag in filters.tags" :key="tag" class="px-3 py-1 text-xs font-medium text-body-secondary bg-body-tertiary rounded-full cursor-pointer" @click="removeTag(tag)">
+          <span>{{ tag }}</span>
+          <span class="ml-1 text-xs text-body-tertiary">x</span>
+        </button>
+      </div>
     </div>
   </div>
 </template>
