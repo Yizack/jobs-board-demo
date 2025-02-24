@@ -52,7 +52,7 @@ watch(filters, (newFilters) => {
         <h2 class="text-lg font-bold">Filters</h2>
       </div>
       <Transition name="slide-right">
-        <button v-if="hasFilterChanged" class="flex gap-1 items-center text-sm text-primary cursor-pointer hover:underline" @click="jobs.resetFilters()">
+        <button v-if="hasFilterChanged" id="reset" class="flex gap-1 items-center text-sm text-primary cursor-pointer hover:underline" @click="jobs.resetFilters">
           <Icon icon="tabler:refresh" class="text-primary" style="font-size: 1.1rem;" />
           <span>Reset</span>
         </button>
