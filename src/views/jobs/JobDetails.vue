@@ -15,8 +15,8 @@ const job = jobsStore.data.find((job) => job.id === Number(params.id));
 
 if (!job) throw createError({ message: "Job not found", statusCode: 404 });
 
-const companies = await $fetch<Company[]>("/data/companies.json");
-const company = companies.find((company) => company.id === job.company.id);
+const companies = await $fetch<Company[]>("/data/companies.json").catch(() => null);
+const company = companies?.find((company) => company.id === job.company.id);
 
 if (!company) {
   throw createError({ message: "Company not found", statusCode: 404 });
