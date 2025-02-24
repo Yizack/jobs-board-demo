@@ -9,7 +9,7 @@ defineProps<{
 
 <template>
   <div class="flex flex-wrap gap-2">
-    <RouterLink v-for="tag in tags" :key="tag" :to="`/jobs?tag=${toSlug(tag)}`" class="px-3 py-1 text-xs font-medium text-body-secondary bg-body-tertiary rounded-full">
+    <RouterLink v-for="tag in tags" :key="tag" :to="`/jobs?tags=${toSlug(tag)}`" class="px-3 py-1 text-xs font-medium text-body-secondary bg-body-tertiary rounded-full hover:underline">
       <span>{{ tag }}</span>
     </RouterLink>
   </div>
