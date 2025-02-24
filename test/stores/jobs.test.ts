@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { setActivePinia, createPinia } from "pinia";
-import { useJobsStore } from "../../src/stores/jobs";
+import { useJobsStore } from "~/stores/jobs";
 import mockJobs from "../mocks/jobs.json";
 
 vi.mock("ofetch", () => ({

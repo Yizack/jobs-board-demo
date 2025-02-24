@@ -63,7 +63,7 @@ watch(currentPage, () => {
       </li>
       <!-- Between -->
       <li v-for="page in pages" :key="page" class="page-item">
-        <a :href="`?p=${page}`" type="button" class="page-link" :class="{ active: currentPage == page }" @click.prevent="goToPage(page)">
+        <a :href="`?p=${page}`" class="page-link" aria-label="Visible" type="button" :class="{ active: currentPage == page }" @click.prevent="goToPage(page)">
           <span class="fw-bold">{{ page }}</span>
         </a>
       </li>
@@ -73,7 +73,7 @@ watch(currentPage, () => {
       </li>
       <!-- Last -->
       <li v-if="currentPage < pageCount - maxVisible % 2 - (currentPage % 2 ? 0 : 1) && pageCount > maxVisible" class="page-item">
-        <a :href="`?p=${pageCount}`" class="page-link" aria-label="Next" type="button" :disabled="isLastPage" @click.prevent="goToPage(pageCount)">
+        <a :href="`?p=${pageCount}`" class="page-link" aria-label="Last" type="button" :disabled="isLastPage" @click.prevent="goToPage(pageCount)">
           <span class="fw-bold">{{ pageCount }}</span>
         </a>
       </li>
