@@ -14,8 +14,8 @@ const toggleMenu = () => {
 </script>
 
 <template>
-  <nav>
-    <div class="bg-body-secondary px-6 py-2 sticky top-0 w-full z-50 shadow-md">
+  <nav class="sticky top-0 bg-body-secondary px-6 py-2 w-full z-50 shadow-md">
+    <div>
       <div class="flex justify-between items-center w-full max-w-6xl mx-auto gap-4">
         <RouterLink to="/">
           <h1 class="text-xl font-bold">{{ SITE.name }}</h1>
