@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "test": "vitest",
     "test:types": "vue-tsc --noEmit",
     "lint": "eslint",
     "lint:fix": "eslint --fix",

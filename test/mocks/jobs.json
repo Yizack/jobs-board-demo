@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "category": "test-category",
+    "company": {
+      "id": 1,
+      "name": "test-company"
+    },
+    "description": "test-description",
+    "location": "test-location",
+    "title": "test-title",
+    "tags": [
+      "test-tag-1",
+      "test-tag-2"
+    ],
+    "timestamp": 1740339633396
+  },
+  {
+    "id": 2,
+    "category": "test-category",
+    "company": {
+      "id": 2,
+      "name": "test-company"
+    },
+    "description": "test-description",
+    "location": "Remote",
+    "title": "test-title",
+    "tags": [
+      "test-tag-1",
+      "test-tag-2"
+    ],
+    "timestamp": 1740339633396
+  }
+]
