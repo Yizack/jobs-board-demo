@@ -11,7 +11,8 @@ vi.mock("ofetch", () => ({
 }));
 
 vi.mock("vue-router", () => ({
-  useRoute: vi.fn(() => ({ query: {} }))
+  useRoute: vi.fn(() => ({ query: {} })),
+  onBeforeRouteLeave: vi.fn()
 }));
 
 const plugins = [createTestingPinia({ createSpy: vi.fn })];
