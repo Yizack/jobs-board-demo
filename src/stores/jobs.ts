@@ -5,6 +5,9 @@ import { usePagination } from "~/utils/pagination";
 import { useFormState } from "~/utils/form";
 import { toSlug } from "~/utils/helpers";
 
+/**
+ * Jobs store
+ */
 export const useJobsStore = defineStore("jobs", () => {
   const data = ref<Job[]>([]);
   const isFetching = ref(true);

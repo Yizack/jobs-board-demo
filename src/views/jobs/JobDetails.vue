@@ -14,22 +14,22 @@ const { params } = useRoute();
 const jobsStore = useJobsStore();
 const job = jobsStore.data.find((job) => job.id === Number(params.id));
 
+// Show page error if job is not found
 if (!job) throw createError({ message: "Job not found", statusCode: 404 });
 
 const companies = await $fetch<Company[]>("/data/companies.json").catch(() => null);
 const company = companies?.find((company) => company.id === job.company.id);
 
-if (!company) {
-  throw createError({ message: "Company not found", statusCode: 404 });
-}
-
-const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id);
+// Show page error if company is not found
+if (!company) throw createError({ message: "Company not found", statusCode: 404 });
 
 const form = useFormState({
   name: "",
   email: "",
   linkedin: ""
 });
+
+const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id);
 
 // Submit application (In a real-world scenario, this would be sent to a backend)
 const applyToJob = () => {
@@ -41,10 +41,11 @@ const applyToJob = () => {
 
 <template>
   <HeaderSection :title="job.title" :description="`at ${job.company.name}`">
-    <RouterLink v-motion-fade-scale to="/jobs" class="font-bold hover:underline" :delay="200">Back to jobs</RouterLink>
+    <RouterLink v-motion-fade-scale to="/jobs" class="font-bold underline" :delay="200">Back to jobs</RouterLink>
   </HeaderSection>
   <main class="container py-10">
     <div class="grid grid-cols-12 gap-6">
+      <!--- Job details -->
       <div v-motion-fade-slide-left class="col-span-12 lg:col-span-8">
         <div class="bg-body-secondary rounded-lg p-6 shadow-lg">
           <JobTags class="mb-4" :tags="job.tags" />
@@ -62,6 +63,7 @@ const applyToJob = () => {
           </form>
         </div>
       </div>
+      <!--- Company details -->
       <div v-motion-fade-slide-bottom class="col-span-12 lg:col-span-4" :delay="50">
         <div class="bg-body-secondary rounded-lg p-6 shadow-lg">
           <h2 class="text-2xl font-bold mb-4">About the company</h2>
@@ -81,6 +83,7 @@ const applyToJob = () => {
           </div>
         </div>
       </div>
+      <!--- More jobs by company -->
       <div class="col-span-12 flex flex-col gap-3">
         <h2 class="text-2xl font-bold text-center mt-4">
           More jobs by <span class="text-primary">{{ company.name }}</span>

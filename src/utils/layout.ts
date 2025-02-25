@@ -1,6 +1,9 @@
 import { computed, defineAsyncComponent, type Component } from "vue";
 import { useRoute } from "vue-router";
 
+/**
+ * Use dynamic layouts based on the route meta
+ */
 export const useDynamicLayout = () => computed(() => {
   const layoutsList = import.meta.glob<Component>("~/layouts/*Layout.vue");
   const layouts = Object.fromEntries(

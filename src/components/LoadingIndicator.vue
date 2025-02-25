@@ -15,6 +15,7 @@ watch(isLoading, (loading) => {
 
 const router = useRouter();
 
+// Show loading indicator on all route changes
 router.beforeResolve((to, from, next) => {
   isLoading.value = true;
   next();

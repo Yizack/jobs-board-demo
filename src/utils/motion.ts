@@ -1,3 +1,6 @@
+/**
+ * Custom motion bindings for vueuse motion
+ */
 export const useMotionBinds = () => ({
   "fade-scale": {
     initial: { scale: .95, opacity: 0 },

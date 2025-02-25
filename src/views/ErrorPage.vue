@@ -9,6 +9,7 @@ const { error } = storeToRefs(errorStore);
 
 const router = useRouter();
 
+// Set error if not already set
 if (!error.value) {
   errorStore.setError({
     statusCode: 404,

@@ -18,8 +18,9 @@ const calculateBounds = (options: { currentPage: number, currentPageSize: number
  */
 export const usePagination = <T>(items: Ref<T[]>, config: { pageSize: number }) => {
   const totalItems = computed(() => items.value.length);
-  const page = ref(1);
+  const page = ref(1); // Default page
 
+  // Get if route has a page query
   const { query } = useRoute();
   if (query.p) {
     page.value = Number(query.p as string) || page.value;
@@ -42,6 +43,7 @@ export const usePagination = <T>(items: Ref<T[]>, config: { pageSize: number }) 
 
   const data = computed(() => items.value.slice(sliceStart.value, sliceEnd.value));
 
+  // Display info
   const display = computed(() => {
     const currentPage = pagination.currentPage.value;
     const pageSize = pagination.currentPageSize.value;

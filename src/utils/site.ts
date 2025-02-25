@@ -1,5 +1,8 @@
 import { routes } from "~/router";
 
+/**
+ * Site information
+ */
 export const SITE = {
   name: "Jobs Board",
   author: "Yizack Rangel",
