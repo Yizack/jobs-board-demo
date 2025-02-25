@@ -10,7 +10,7 @@ import { SITE } from "~/utils/site";
         <p class="text-2xl font-bold">{{ SITE.name }}</p>
         <p class="text-body-secondary">© {{ new Date().getFullYear() }}, {{ SITE.author }}.</p>
       </div>
-      <div class="col-span-12 lg:col-span-4 flex flex-col items-end my-auto">
+      <div class="col-span-12 lg:col-span-4 flex flex-col lg:items-end mt-2 lg:my-auto">
         <a class="flex items-center gap-1 hover:underline" :href="SITE.repository" target="_blank" rel="noopener noreferrer">
           <Icon icon="simple-icons:github" />
           <span>GitHub repository</span>
