@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./fonts.css";
 @import "./nprogress.css";
 @import "./transitions.css";
 @import "./theme.css";
@@ -7,26 +8,7 @@
 @import "./forms.css";
 @import "./buttons.css";
 
-@font-face {
-  font-family: fredoka;
-  src: url("/fonts/Fredoka-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: fredoka;
-  font-weight: bold;
-  src: url("/fonts/Fredoka-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: fredoka;
-  font-weight: 500;
-  src: url("/fonts/Fredoka-Medium.ttf") format("truetype");
-}
-
 :root {
-  --default-font-family: fredoka;
-
   scrollbar-width: auto;
   scroll-behavior: unset;
 }
