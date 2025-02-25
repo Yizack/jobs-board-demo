@@ -1,17 +1,24 @@
+.page-item {
+  height: 100%;
+}
+
 .page-link {
-  display: block;  
+  display: flex;
+  align-items: center;
   background-color: var(--color-gray-100);
   transition: none;
   padding: 2px 10px;
   border: none;
   text-decoration: none!important;
+  height: 100%;
   border-radius: var(--radius-xl);
+  cursor: pointer;
   &:where(.dark, .dark *) {
     background-color: var(--color-gray-700);
   }
 }
 
-.active>.page-link, .page-link.active, .page-link:focus, .page-link:disabled {
+.active>.page-link, .page-link.active, .page-link:hover, .page-link:disabled {
   border-color: var(--bs-primary);
 }
 
@@ -19,7 +26,7 @@
   background-color: rgba(var(--bs-primary-rgb), 0.2);
 }
 
-.active>.page-link, .page-link.active, .page-link:focus {
+.active>.page-link, .page-link.active, .page-link:hover {
   color: var(--color-white);
   background-color: var(--color-blue-500);
   &:where(.dark, .dark *) {
