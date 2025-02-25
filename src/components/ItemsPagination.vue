@@ -43,6 +43,7 @@ watch(currentPage, () => {
   const queryParams = currentQuery.toString();
   const url = path + (queryParams ? "?" + queryParams : "");
   window.history.replaceState({}, "", url);
+  window.scrollTo({ top: 0 });
 });
 </script>
 
