@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "preview": "vite preview",
     "test": "vitest run --reporter=verbose",
     "test:watch": "vitest watch",
@@ -43,6 +43,7 @@
     "typescript": "^5.7.3",
     "vite": "^6.1.1",
     "vite-plugin-vue-devtools": "^7.7.2",
+    "vite-ssg": "^25.2.0",
     "vitest": "^3.0.6",
     "vue-tsc": "^2.2.4"
   },

@@ -1,17 +1,32 @@
-import { createApp } from "vue";
+import "~/assets/main.css";
+
+import devalue from "@nuxt/devalue";
+import { ViteSSG } from "vite-ssg";
 import { createPinia } from "pinia";
 import { MotionPlugin } from "@vueuse/motion";
 import App from "~/App.vue";
-import router from "~/router";
+import { routes } from "~/router";
 import { useMotionBinds } from "~/utils/motion";
-import "~/assets/main.css";
+import jobsMiddleware from "~/middlewares/jobs";
 
-const app = createApp(App);
-const pinia = createPinia();
+export const createApp = ViteSSG(App,
+  // vue-router options
+  { routes },
+  // function to have custom setups
+  ({ app, initialState, router }) => {
+    const pinia = createPinia();
+    app.use(pinia);
+    app.use(MotionPlugin, {
+      directives: useMotionBinds()
+    });
 
-app.use(router);
-app.use(pinia);
-app.use(MotionPlugin, {
-  directives: useMotionBinds()
-});
-app.mount("#app");
+    if (import.meta.env.SSR) initialState.pinia = pinia.state.value;
+    else pinia.state.value = initialState?.pinia || {};
+
+    // Apply middleware to the router
+    router.beforeEach(jobsMiddleware);
+  },
+  {
+    transformState: (state) => import.meta.env.SSR ? devalue(state) : state
+  }
+);

@@ -4,6 +4,7 @@ import { $fetch } from "ofetch";
 import { usePagination } from "~/utils/pagination";
 import { useFormState } from "~/utils/form";
 import { toSlug } from "~/utils/helpers";
+import jobsJSON from "~/../public/data/jobs.json";
 
 /**
  * Jobs store
@@ -13,10 +14,12 @@ export const useJobsStore = defineStore("jobs", () => {
   const isFetching = ref(true);
 
   // Get jobs data from the session storage if available as cache to avoid fetching the same data on route changes
-  const storedJobs = sessionStorage.getItem("jobs");
-  if (storedJobs) {
-    data.value = JSON.parse(storedJobs);
-    isFetching.value = false;
+  if (!import.meta.env.SSR) {
+    const storedJobs = sessionStorage.getItem("jobs");
+    if (storedJobs) {
+      data.value = JSON.parse(storedJobs);
+      isFetching.value = false;
+    }
   }
 
   /**
@@ -24,8 +27,8 @@ export const useJobsStore = defineStore("jobs", () => {
    */
   const fetchData = async () => {
     isFetching.value = true;
-    data.value = await $fetch<Job[]>("/data/jobs.json").catch(() => []);
-    sessionStorage.setItem("jobs", JSON.stringify(data.value));
+    data.value = await $fetch<Job[]>("/data/jobs.json").catch(() => jobsJSON);
+    if (!import.meta.env.SSR) sessionStorage.setItem("jobs", JSON.stringify(data.value));
     isFetching.value = false;
   };
 
