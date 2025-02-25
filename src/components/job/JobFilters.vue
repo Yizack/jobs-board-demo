@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, toRefs, watch, ref } from "vue";
-import { useRoute } from "vue-router";
+import { onBeforeRouteLeave, useRoute, useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { useJobsStore } from "~/stores/jobs";
 import { getAvailableTags, toSlug } from "~/utils/helpers";
@@ -14,20 +14,9 @@ const { filters } = toRefs(jobs);
 
 const tagSearch = ref("");
 
-const availableTags = computed(() => {
-  return getAvailableTags(jobs.data).filter((tag) => {
-    return !filters.value.tags?.includes(toSlug(tag)) && toSlug(tag.toLowerCase()).includes(toSlug(tagSearch.value));
-  });
-});
-
-const hasFilterChanged = computed(() => {
-  return Object.values(filters.value).some(Boolean);
-});
-
-// Reset filters if the route has changed and filters are applied
-if (hasFilterChanged.value) {
-  jobs.resetFilters();
-}
+const availableTags = computed(() => getAvailableTags(jobs.data).filter((tag) => {
+  return !filters.value.tags?.includes(toSlug(tag)) && toSlug(tag.toLowerCase()).includes(toSlug(tagSearch.value));
+}));
 
 const { path, query } = useRoute();
 
@@ -39,6 +28,9 @@ if (Object.entries(query).length) {
     remote: query?.remote === "true",
     tags: query.tags?.toString().split(",") || null
   });
+  // Clear route query to fix clicking on the same tag
+  const { currentRoute } = useRouter();
+  currentRoute.value.query = {};
 }
 
 const addTag = (tag: string) => {
@@ -64,6 +56,12 @@ watch(filters, (newFilters) => {
   const url = path + (queryParams ? "?" + queryParams : "");
   window.history.replaceState({}, "", url);
 }, { deep: true });
+
+// Reset filters on route leave if filters are applied
+const hasFilterChanged = computed(() => Object.values(filters.value).some(Boolean));
+onBeforeRouteLeave(() => {
+  if (hasFilterChanged.value) jobs.resetFilters();
+});
 </script>
 
 <template>
@@ -80,6 +78,7 @@ watch(filters, (newFilters) => {
         </button>
       </Transition>
     </div>
+    <!-- Filters -->
     <div class="flex flex-col gap-2">
       <hr class="text-muted">
       <FormInput id="search" v-model.trim="filters.search" placeholder="Search" icon="tabler:search" autocomplete="off" floating />
