@@ -6,8 +6,6 @@ import { useNProgress } from "@vueuse/integrations/useNProgress";
 
 const { isLoading, start, done } = useNProgress();
 
-isLoading.value = true;
-
 watch(isLoading, (loading) => {
   if (loading) start();
   else done();
@@ -15,6 +13,7 @@ watch(isLoading, (loading) => {
 
 const router = useRouter();
 
+// Show loading indicator on all route changes
 router.beforeResolve((to, from, next) => {
   isLoading.value = true;
   next();

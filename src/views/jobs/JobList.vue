@@ -18,6 +18,7 @@ const { pagination, isFetching } = toRefs(jobsStore);
         <JobFilters />
       </div>
       <div class="col-span-12 md:col-span-8 lg:col-span-9">
+        <!--- Job list -->
         <div v-if="pagination.data.length" class="flex flex-col gap-3">
           <span v-motion-fade-slide-bottom>
             Displaying results
@@ -36,10 +37,12 @@ const { pagination, isFetching } = toRefs(jobsStore);
           </TransitionGroup>
           <ItemsPagination v-motion-fade-slide-bottom :pagination="pagination" :max-visible="3" class="flex justify-end" />
         </div>
+        <!--- Skeleton to show while loading -->
         <div v-else-if="isFetching" class="flex flex-col gap-3">
           <div class="h-6 bg-gray-300 rounded-full animate-pulse" />
           <JobCardSkeleton v-for="n of 6" :key="n" />
         </div>
+        <!--- No jobs found -->
         <div v-else class="col-12">
           <div class="bg-body-secondary rounded-lg p-4 flex gap-2" role="alert">
             <Icon icon="tabler:alert-triangle" class="text-2xl text-primary" />

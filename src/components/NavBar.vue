@@ -15,6 +15,7 @@ const toggleMenu = () => {
 
 <template>
   <nav class="sticky top-0 bg-body-secondary px-6 py-2 w-full z-50 shadow-md">
+    <!-- Desktop navbar -->
     <div>
       <div class="flex justify-between items-center w-full max-w-6xl mx-auto gap-4">
         <RouterLink to="/">
@@ -37,6 +38,7 @@ const toggleMenu = () => {
         </div>
       </div>
     </div>
+    <!-- Off canvas menu -->
     <div v-if="isOpen" class="bg-body-secondary fixed inset-0 opacity-50 z-40 lg:hidden" @click="toggleMenu" />
     <Transition name="slide-left" mode="out-in">
       <div v-if="isOpen" class="bg-body-secondary w-80 shadow-xl fixed inset-y-0 left-0 z-50 transform transition-transform lg:hidden" :class="isOpen ? 'translate-x-0' : '-translate-x-full'">

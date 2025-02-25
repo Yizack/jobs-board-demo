@@ -1,5 +1,9 @@
 import { ref, type Ref } from "vue";
 
+/**
+ * Create a form state with reset method
+ * @param initialState
+ */
 export const useFormState = <T>(initialState: T) => {
   const data = ref<T>({ ...initialState });
   const methods = {
