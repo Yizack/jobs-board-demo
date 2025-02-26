@@ -39,13 +39,18 @@ export const useJobsStore = defineStore("jobs", () => {
 
   // Filter jobs
   const filteredData = computed(() => {
+    const { search, remote, days, tags } = filters.value;
+    const searchLower = search.toLowerCase();
+
     return data.value.filter((job) => {
-      const titleMatch = job.title.toLowerCase().includes(filters.value.search.toLowerCase());
-      const tagsMatch = job.tags.some((tag) => tag.toLowerCase().includes(filters.value.search.toLowerCase()));
-      const remoteMatch = !filters.value.remote || job.location.toLowerCase().includes("remote");
-      const daysMatch = filters.value.days === 0 || new Date(job.timestamp) > new Date(Date.now() - filters.value.days * 86400 * 1000);
-      const tagMatch = !filters.value.tags || job.tags.some((t) => filters.value.tags?.map(ft => toSlug(ft)).includes(toSlug(t)));
-      return (!filters.value.search || titleMatch || tagsMatch) && remoteMatch && daysMatch && tagMatch;
+      const titleMatch = job.title.toLowerCase().includes(searchLower);
+      const tagMatch = job.tags.some((tag) => tag.toLowerCase().includes(searchLower));
+      const companyMatch = job.company.name.toLowerCase().includes(searchLower);
+      const remoteMatch = !remote || job.location.toLowerCase().includes("remote");
+      const daysMatch = !days || new Date(job.timestamp) > new Date(Date.now() - days * 86400 * 1000);
+      const tagsMatch = !tags || job.tags.some((t) => tags?.map(ft => toSlug(ft)).includes(toSlug(t)));
+
+      return (!searchLower || titleMatch || tagMatch || companyMatch) && remoteMatch && daysMatch && tagsMatch;
     });
   });
 

@@ -10,9 +10,10 @@ import JobCard from "~/components/job/JobCard.vue";
 import JobTags from "~/components/job/JobTags.vue";
 
 const { params } = useRoute();
+const jobId = Number(params.id);
 
 const jobsStore = useJobsStore();
-const job = jobsStore.data.find((job) => job.id === Number(params.id));
+const job = jobsStore.data.find((job) => job.id === jobId);
 
 // Show page error if job is not found
 if (!job) throw createError({ message: "Job not found", statusCode: 404 });
@@ -29,7 +30,7 @@ const form = useFormState({
   linkedin: ""
 });
 
-const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id);
+const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id && job.id !== jobId);
 
 // Submit application (In a real-world scenario, this would be sent to a backend)
 const applyToJob = () => {
