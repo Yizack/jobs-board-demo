@@ -4,7 +4,7 @@ import { MotionPlugin } from "@vueuse/motion";
 import App from "~/App.vue";
 import router from "~/router";
 import { useMotionBinds } from "~/utils/motion";
-import "~/assets/main.css";
+import "~/assets/css/main.css";
 
 const app = createApp(App);
 const pinia = createPinia();
