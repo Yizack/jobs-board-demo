@@ -13,7 +13,7 @@ defineProps<{
   transparent?: boolean;
 }>();
 
-const model = defineModel<string>();
+const model = defineModel<string>({ required: true });
 </script>
 
 <template>

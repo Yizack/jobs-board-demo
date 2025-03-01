@@ -82,11 +82,11 @@ onBeforeRouteLeave(() => {
     <div class="flex flex-col gap-2">
       <hr class="text-muted">
       <FormInput id="search" v-model.trim="filters.search" placeholder="Search" icon="tabler:search" autocomplete="off" floating />
-      <FormSelect id="days" v-model.number="filters.days">
-        <option value="0" disabled>Date posted</option>
-        <option value="1">Past 24 hours</option>
-        <option value="7">Past week</option>
-        <option value="28">Past month</option>
+      <FormSelect id="days" v-model="filters.days">
+        <option :value="0" disabled>Date posted</option>
+        <option :value="1">Past 24 hours</option>
+        <option :value="7">Past week</option>
+        <option :value="28">Past month</option>
       </FormSelect>
       <div class="relative">
         <FormInput id="tag" v-model="tagSearch" placeholder="Tags" icon="tabler:tag" autocomplete="off" floating />

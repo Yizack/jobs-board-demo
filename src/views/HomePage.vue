@@ -10,7 +10,7 @@ import FormInput from "~/components/form/FormInput.vue";
 const jobsStore = useJobsStore();
 const jobs = getShuffle(jobsStore.data, 6);
 
-const search = ref();
+const search = ref("");
 
 const router = useRouter();
 const searchJobs = async () => {

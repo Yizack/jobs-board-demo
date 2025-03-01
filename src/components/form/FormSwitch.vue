@@ -4,7 +4,7 @@ defineProps<{
   label: string;
 }>();
 
-const model = defineModel<boolean>();
+const model = defineModel<boolean>({ required: true });
 </script>
 
 <template>

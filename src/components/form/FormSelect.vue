@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T">
 defineProps<{
   id: string;
 }>();
 
-const model = defineModel<unknown>();
+const model = defineModel<T>({ required: true });
 </script>
 
 <template>
