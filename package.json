@@ -23,9 +23,9 @@
     "@eslint/compat": "^1.2.7",
     "@iconify/vue": "^4.3.0",
     "@pinia/testing": "^1.0.0",
-    "@stylistic/eslint-plugin": "^4.0.1",
-    "@tailwindcss/vite": "^4.0.8",
-    "@types/node": "^22.13.5",
+    "@stylistic/eslint-plugin": "^4.1.0",
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/node": "^22.13.8",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/eslint-config-typescript": "^14.4.0",
     "@vue/test-utils": "^2.4.6",
@@ -38,13 +38,13 @@
     "jsdom": "^26.0.0",
     "nprogress": "^0.2.0",
     "ofetch": "^1.4.1",
-    "tailwindcss": "^4.0.8",
+    "tailwindcss": "^4.0.9",
     "tsx": "^4.19.3",
-    "typescript": "^5.7.3",
-    "vite": "^6.1.1",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
     "vite-plugin-vue-devtools": "^7.7.2",
-    "vitest": "^3.0.6",
-    "vue-tsc": "^2.2.4"
+    "vitest": "^3.0.7",
+    "vue-tsc": "^2.2.6"
   },
-  "packageManager": "pnpm@10.4.1"
+  "packageManager": "pnpm@10.5.2"
 }
