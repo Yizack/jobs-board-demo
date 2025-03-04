@@ -1,64 +1,46 @@
-import { useOffsetPagination } from "@vueuse/core";
-import { computed, ref, type Ref } from "vue";
+import { computed, reactive, ref, toRefs, type Ref } from "vue";
 import { useRoute } from "vue-router";
-
-const sliceStart = ref<number>();
-const sliceEnd = ref<number>();
-
-/**
- * Calculate the start and end index of the slice
- */
-const calculateBounds = (options: { currentPage: number, currentPageSize: number }) => {
-  sliceStart.value = (options.currentPage - 1) * options.currentPageSize;
-  sliceEnd.value = sliceStart.value + options.currentPageSize;
-};
 
 /**
  * Pagination composable
  */
-export const usePagination = <T>(items: Ref<T[]>, config: { pageSize: number }) => {
-  const totalItems = computed(() => items.value.length);
-  const page = ref(1); // Default page
-
-  // Get if route has a page query
-  const { query } = useRoute();
-  if (query.p) {
-    page.value = Number(query.p as string) || page.value;
+export const usePagination = <T>(
+  items: Ref<T[]>,
+  config: {
+    currentPage?: number;
+    pageSize: number;
   }
+) => {
+  const reactiveConfig = reactive(config);
+  const { pageSize } = toRefs(reactiveConfig);
+  const currentPage = ref(reactiveConfig.currentPage || 1);
 
-  const pagination = useOffsetPagination({
-    total: totalItems,
-    page,
-    pageSize: config.pageSize,
-    onPageChange: calculateBounds,
-    onPageSizeChange: calculateBounds
+  const { query } = useRoute();
+  const p = Number(query.p);
+  if (p) currentPage.value = p;
+
+  const total = computed(() => items.value.length);
+
+  const data = computed(() => {
+    const start = (currentPage.value - 1) * pageSize.value;
+    const end = currentPage.value * pageSize.value;
+    return items.value.slice(start, end);
   });
-
-  calculateBounds({
-    currentPage: pagination.currentPage.value,
-    currentPageSize: pagination.currentPageSize.value
-  });
-
-  const goToPage = (page: number) => pagination.currentPage.value = page;
-
-  const data = computed(() => items.value.slice(sliceStart.value, sliceEnd.value));
 
   // Display info
   const display = computed(() => {
-    const currentPage = pagination.currentPage.value;
-    const pageSize = pagination.currentPageSize.value;
-    const isInRange = currentPage <= pagination.pageCount.value && currentPage > 0;
+    const pageCount = Math.ceil(total.value / pageSize.value);
+    const isInRange = currentPage.value > 0 && currentPage.value <= pageCount;
     return {
-      total: totalItems.value,
-      from: isInRange ? (currentPage - 1) * pageSize + 1 : 0,
-      to: isInRange ? Math.min(currentPage * pageSize, items.value.length) : 0
+      total: total.value,
+      from: isInRange ? (currentPage.value - 1) * pageSize.value + 1 : 0,
+      to: isInRange ? Math.min(currentPage.value * pageSize.value, total.value) : 0
     };
   });
 
-  return {
-    ...pagination,
+  return reactive({
+    config: { currentPage, pageSize, total },
     data,
-    display,
-    goToPage
-  };
+    display
+  });
 };

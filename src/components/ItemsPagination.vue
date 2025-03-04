@@ -1,31 +1,44 @@
 <script setup lang="ts" generic="T">
-import { watch, toRefs, type UnwrapRef, computed } from "vue";
+import { watch, computed } from "vue";
 import { useRoute } from "vue-router";
 import { Icon } from "@iconify/vue";
-import { usePagination } from "~/utils/pagination";
+import { useOffsetPagination } from "@vueuse/core";
 
-const props = defineProps<{
-  pagination: UnwrapRef<ReturnType<typeof usePagination<T>>>;
-  maxVisible: number;
+const props = withDefaults(defineProps<{
+  max?: number;
+  total: number;
+  pageSize: number;
+}>(), {
+  max: 3
+});
+
+const currentPage = defineModel<number>({ default: 1, required: true });
+
+type PaginationEvent = { currentPage: number, currentPageSize: number };
+const emit = defineEmits<{
+  pageChange: [PaginationEvent];
+  pageSizeChange: [PaginationEvent];
 }>();
 
-const {
-  pageCount,
-  currentPage,
-  isFirstPage,
-  isLastPage,
-  prev,
-  next,
-  goToPage
-} = toRefs(props.pagination);
+const { prev, next, isFirstPage, isLastPage, pageCount } = useOffsetPagination({
+  total: computed(() => props.total),
+  page: currentPage,
+  pageSize: props.pageSize,
+  onPageChange: p => emit("pageChange", p),
+  onPageSizeChange: p => emit("pageSizeChange", p)
+});
+
+if (currentPage.value > pageCount.value || currentPage.value < 1) currentPage.value = 1;
+
+const goToPage = (page: number) => currentPage.value = page;
 
 const pages = computed(() => {
   const visibleButtons = [];
-  const maxVisible = props.maxVisible;
-  const half = Math.floor(maxVisible / 2);
+  const max = props.max;
+  const half = Math.floor(max / 2);
 
-  const start = Math.max(1, Math.min(currentPage.value - half, pageCount.value - maxVisible + 1));
-  const end = Math.min(pageCount.value, start + maxVisible - 1);
+  const start = Math.max(1, Math.min(currentPage.value - half, pageCount.value - max + 1));
+  const end = Math.min(pageCount.value, start + max - 1);
 
   for (let i = start; i <= end; i++) {
     visibleButtons.push(i);
@@ -48,10 +61,10 @@ watch(currentPage, () => {
 </script>
 
 <template>
-  <nav v-if="pagination.pageCount > 1" aria-label="Page navigation">
+  <nav v-if="pageCount > 1 && pageCount < Infinity" aria-label="Page navigation">
     <ul class="flex items-center gap-1 m-0">
       <!-- First -->
-      <li v-if="currentPage > maxVisible - 1" class="page-item">
+      <li v-if="currentPage > max - 1" class="page-item">
         <a href="?p=1" class="page-link" aria-label="First" type="button" :disabled="isFirstPage" @click.prevent="goToPage(1)">
           <Icon icon="tabler:chevrons-left" style="font-size: 1.2rem" />
         </a>
@@ -69,11 +82,11 @@ watch(currentPage, () => {
         </a>
       </li>
       <!-- ... -->
-      <li v-if="currentPage < pageCount - maxVisible % 2 - (currentPage % 2 ? 1 : 0) - 1 && pageCount - 1 > maxVisible">
+      <li v-if="currentPage < pageCount - max % 2 - (currentPage % 2 ? 1 : 0) - 1 && pageCount - 1 > max">
         <span class="px-2">...</span>
       </li>
       <!-- Last -->
-      <li v-if="currentPage < pageCount - maxVisible % 2 - (currentPage % 2 ? 0 : 1) && pageCount > maxVisible" class="page-item">
+      <li v-if="currentPage < pageCount - max % 2 - (currentPage % 2 ? 0 : 1) && pageCount > max" class="page-item">
         <a :href="`?p=${pageCount}`" class="page-link" aria-label="Last" type="button" :disabled="isLastPage" @click.prevent="goToPage(pageCount)">
           <span class="fw-bold">{{ pageCount }}</span>
         </a>

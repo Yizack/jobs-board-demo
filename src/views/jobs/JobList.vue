@@ -6,9 +6,13 @@ import JobCard from "~/components/job/JobCard.vue";
 import JobCardSkeleton from "~/components/job/JobCardSkeleton.vue";
 import JobFilters from "~/components/job/JobFilters.vue";
 import ItemsPagination from "~/components/ItemsPagination.vue";
+import { usePagination } from "~/utils/pagination";
 
 const jobsStore = useJobsStore();
-const { pagination, isFetching } = toRefs(jobsStore);
+const { data, isFetching } = toRefs(jobsStore);
+
+// Pagination for list of jobs
+const pagination = usePagination(data, { pageSize: 6 });
 </script>
 
 <template>
@@ -35,7 +39,7 @@ const { pagination, isFetching } = toRefs(jobsStore);
               </div>
             </div>
           </TransitionGroup>
-          <ItemsPagination v-motion-fade-slide-bottom :pagination="pagination" :max-visible="3" class="flex justify-end" />
+          <ItemsPagination v-model="pagination.config.currentPage" v-motion-fade-slide-bottom v-bind="pagination.config" class="flex justify-end" />
         </div>
         <!--- Skeleton to show while loading -->
         <div v-else-if="isFetching" class="flex flex-col gap-3">
