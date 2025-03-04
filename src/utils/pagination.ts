@@ -1,4 +1,4 @@
-import { computed, reactive, ref, toRefs, type Ref } from "vue";
+import { computed, reactive, ref, toRefs, type Ref, type MaybeRef } from "vue";
 import { useRoute } from "vue-router";
 
 /**
@@ -7,8 +7,8 @@ import { useRoute } from "vue-router";
 export const usePagination = <T>(
   items: Ref<T[]>,
   config: {
-    currentPage?: number;
-    pageSize: number;
+    currentPage?: MaybeRef<number>;
+    pageSize: MaybeRef<number>;
   }
 ) => {
   const reactiveConfig = reactive(config);

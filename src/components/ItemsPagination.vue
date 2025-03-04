@@ -20,7 +20,7 @@ const emit = defineEmits<{
   pageSizeChange: [PaginationEvent];
 }>();
 
-const { prev, next, isFirstPage, isLastPage, pageCount } = useOffsetPagination({
+const { prev, next, isFirstPage, isLastPage, pageCount, currentPageSize } = useOffsetPagination({
   total: computed(() => props.total),
   page: currentPage,
   pageSize: props.pageSize,
@@ -57,6 +57,10 @@ watch(currentPage, () => {
   const url = path + (queryParams ? "?" + queryParams : "");
   window.history.replaceState({}, "", url);
   window.scrollTo({ top: 0 });
+});
+
+watch(() => props.pageSize, () => {
+  currentPageSize.value = props.pageSize;
 });
 </script>
 
