@@ -19,9 +19,9 @@ export default defineConfigWithVueTs([
     },
     rules: {
       ...pluginVue.configs.base.rules,
-      ...pluginVue.configs["vue3-recommended"].rules,
-      ...pluginVue.configs["vue3-strongly-recommended"].rules,
-      ...pluginVue.configs["vue3-essential"].rules,
+      ...pluginVue.configs["flat/recommended"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+      ...pluginVue.configs["flat/strongly-recommended"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+      ...pluginVue.configs["flat/essential"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
       "camelcase": ["error", { properties: "never", ignoreDestructuring: true }],
       "no-console": ["error", { allow: ["info", "warn", "error"] }],
       "@stylistic/indent": ["error", 2, { SwitchCase: 1 }],
