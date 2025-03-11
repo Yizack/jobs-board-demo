@@ -9,13 +9,13 @@ A simple jobs board web application built with Vue 3, Vite, Tailwind CSS, and Pi
 1. Clone the Repository
 
 ```sh
-git clone https://github.com/Yizack/job-listings-assessment.git
+git clone https://github.com/Yizack/jobs-board-demo.git
 ```
 
 2. Install Dependencies
 
 ```sh
-cd job-listings-assessment
+cd jobs-board-demo
 pnpm i
 ```
 
@@ -110,8 +110,8 @@ The project is automatically deployed on Cloudflare Pages and Vercel.
 
 | Deployment | URL |
 | --- | --- |
-| Cloudflare Pages | https://job-listings-assessment.pages.dev |
-| Vercel | https://job-listings-assessment.vercel.app |
+| Cloudflare Pages | https://jobs-board-demo.pages.dev |
+| Vercel | https://jobs-board-demo.vercel.app |
 
 ## Development
 
