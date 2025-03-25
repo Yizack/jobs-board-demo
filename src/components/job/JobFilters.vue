@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, toRefs, watch, ref } from "vue";
+import { computed, ref, toRefs, watch } from "vue";
 import { onBeforeRouteLeave, useRoute, useRouter } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { useJobsStore } from "~/stores/jobs";
@@ -7,7 +7,7 @@ import { getAvailableTags, toSlug } from "~/utils/helpers";
 import FormInput from "~/components/form/FormInput.vue";
 import FormSwitch from "~/components/form/FormSwitch.vue";
 import FormSelect from "~/components/form/FormSelect.vue";
-import FormAutocomplete from "../form/FormAutocomplete.vue";
+import FormAutocomplete from "~/components/form/FormAutocomplete.vue";
 
 const jobs = useJobsStore();
 const { filters } = toRefs(jobs);

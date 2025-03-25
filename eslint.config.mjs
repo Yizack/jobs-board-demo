@@ -1,29 +1,35 @@
-import path from "node:path";
-import pluginVue from "eslint-plugin-vue";
+import { resolve } from "node:path";
 import { defineConfigWithVueTs, vueTsConfigs } from "@vue/eslint-config-typescript";
-import { fileURLToPath } from "node:url";
 import { includeIgnoreFile } from "@eslint/compat";
-import stylistic from "@stylistic/eslint-plugin";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const gitignorePath = path.resolve(__dirname, ".gitignore");
+import vuePlugin from "eslint-plugin-vue";
+import stylisticPlugin from "@stylistic/eslint-plugin";
+import importPlugin from "eslint-plugin-import-x";
 
 export default defineConfigWithVueTs([
   vueTsConfigs.recommendedTypeChecked,
-  includeIgnoreFile(gitignorePath),
+  includeIgnoreFile(resolve(".gitignore")),
   {
     files: ["**/*.vue", "**/*.js", "**/*.ts", "**/*.mjs"],
     plugins: {
-      "@stylistic": stylistic
+      "vue": vuePlugin,
+      "@stylistic": stylisticPlugin,
+      "import": importPlugin
     },
     rules: {
-      ...pluginVue.configs.base.rules,
-      ...pluginVue.configs["flat/recommended"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
-      ...pluginVue.configs["flat/strongly-recommended"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
-      ...pluginVue.configs["flat/essential"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+      ...vuePlugin.configs.base.rules,
+      ...vuePlugin.configs["flat/recommended"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+      ...vuePlugin.configs["flat/strongly-recommended"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
+      ...vuePlugin.configs["flat/essential"].map(c => c.rules).reduce((acc, c) => ({ ...acc, ...c }), {}),
       "camelcase": ["error", { properties: "never", ignoreDestructuring: true }],
       "no-console": ["error", { allow: ["info", "warn", "error"] }],
+      "sort-imports": ["error", { ignoreDeclarationSort: true }],
+      "import/first": "error",
+      "import/no-duplicates": "error",
+      "import/no-mutable-exports": "error",
+      "import/no-named-default": "error",
+      "import/no-self-import": "error",
+      "import/order": "error",
+      "import/newline-after-import": ["error", { count: 1 }],
       "@stylistic/indent": ["error", 2, { SwitchCase: 1 }],
       "@stylistic/linebreak-style": ["error", process.platform === "win32" ? "windows" : "unix"],
       "@stylistic/quotes": ["error", "double"],
@@ -52,17 +58,11 @@ export default defineConfigWithVueTs([
       "@stylistic/space-in-parens": ["error", "never"],
       "@stylistic/template-curly-spacing": "error",
       "@stylistic/quote-props": ["error", "consistent-as-needed"],
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/consistent-type-imports": "error",
       "vue/first-attribute-linebreak": ["error", { singleline: "ignore", multiline: "ignore" }],
       "vue/max-attributes-per-line": ["error", { singleline: 100 }],
       "vue/singleline-html-element-content-newline": ["off"]
-    }
-  },
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname
-      }
     }
   }
 ]);

@@ -1,4 +1,4 @@
-import { computed, defineAsyncComponent, type Component } from "vue";
+import { type Component, computed, defineAsyncComponent } from "vue";
 import { useRoute } from "vue-router";
 
 /**

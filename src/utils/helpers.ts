@@ -1,4 +1,4 @@
-import type { RouteLocationNormalized, NavigationGuardNext } from "vue-router";
+import type { NavigationGuardNext, RouteLocationNormalized } from "vue-router";
 import { useErrorStore } from "~/stores/error";
 
 /**

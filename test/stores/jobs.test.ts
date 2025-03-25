@@ -1,7 +1,7 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
-import { setActivePinia, createPinia } from "pinia";
-import { useJobsStore } from "~/stores/jobs";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { createPinia, setActivePinia } from "pinia";
 import mockJobs from "../mocks/jobs.json";
+import { useJobsStore } from "~/stores/jobs";
 
 vi.mock("ofetch", () => ({
   $fetch: vi.fn(() => Promise.resolve(mockJobs))

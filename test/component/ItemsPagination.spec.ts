@@ -1,9 +1,9 @@
-import { ref, reactive } from "vue";
-import { describe, it, expect, vi } from "vitest";
+import { reactive, ref } from "vue";
+import { describe, expect, it, vi } from "vitest";
 import { mount } from "@vue/test-utils";
+import mockJobs from "../mocks/jobs.json";
 import ItemsPagination from "~/components/ItemsPagination.vue";
 import { usePagination } from "~/utils/pagination";
-import mockJobs from "../mocks/jobs.json";
 
 const mockJobs50 = ref(Array.from({ length: 50 }, (_, i) => ({ ...mockJobs[0], id: i + 1 })));
 

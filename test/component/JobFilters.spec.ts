@@ -1,10 +1,10 @@
 import { toRefs } from "vue";
-import { describe, it, expect, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { mount } from "@vue/test-utils";
 import { createTestingPinia } from "@pinia/testing";
+import mockJobs from "../mocks/jobs.json";
 import JobFilters from "~/components/job/JobFilters.vue";
 import { useJobsStore } from "~/stores/jobs";
-import mockJobs from "../mocks/jobs.json";
 
 vi.mock("ofetch", () => ({
   $fetch: vi.fn(() => Promise.resolve(mockJobs))

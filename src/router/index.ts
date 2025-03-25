@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
+import { type RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
 import { jobRoutes } from "~/router/jobs";
 import jobsMiddleware from "~/middlewares/jobs";
 import HomePage from "~/views/HomePage.vue";

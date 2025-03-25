@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T">
-import { watch, computed } from "vue";
+import { computed, watch } from "vue";
 import { useRoute } from "vue-router";
 import { Icon } from "@iconify/vue";
 import { useOffsetPagination } from "@vueuse/core";
