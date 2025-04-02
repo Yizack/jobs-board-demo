@@ -41,14 +41,14 @@ describe("Job Store", () => {
     });
 
     expect(store.filters.search).toBe("test-title");
-    expect(store.data).toEqual(mockJobs.filter((job) => job.title.toLowerCase().includes("test-title")));
+    expect(store.data).toEqual(mockJobs.filter(job => job.title.toLowerCase().includes("test-title")));
 
     store.applyFilters({
       remote: true
     });
 
     expect(store.filters.remote).toBe(true);
-    expect(store.data).toEqual(mockJobs.filter((job) => job.location.toLowerCase().includes("remote")));
+    expect(store.data).toEqual(mockJobs.filter(job => job.location.toLowerCase().includes("remote")));
   });
 
   it("resets filters correctly", () => {

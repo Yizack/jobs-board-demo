@@ -55,6 +55,6 @@ export const defineRouteMiddleware = (
  * Get available tags from jobs
  */
 export const getAvailableTags = (jobs: Job[]) => {
-  const tags = jobs.map((job) => job.tags).flat();
+  const tags = jobs.map(job => job.tags).flat();
   return Array.from(new Set(tags)).sort();
 };

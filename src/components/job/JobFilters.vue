@@ -41,7 +41,7 @@ const addTag = (tag: string) => {
 
 const removeTag = (tag: string) => {
   if (!filters.value.tags) return;
-  filters.value.tags = filters.value.tags?.filter((t) => t !== tag);
+  filters.value.tags = filters.value.tags?.filter(t => t !== tag);
   if (!filters.value.tags.length) filters.value.tags = null;
 };
 

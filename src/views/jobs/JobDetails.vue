@@ -13,13 +13,13 @@ const { params } = useRoute();
 const jobId = Number(params.id);
 
 const jobsStore = useJobsStore();
-const job = jobsStore.data.find((job) => job.id === jobId);
+const job = jobsStore.data.find(job => job.id === jobId);
 
 // Show page error if job is not found
 if (!job) throw createError({ message: "Job not found", statusCode: 404 });
 
 const companies = await $fetch<Company[]>("/data/companies.json").catch(() => null);
-const company = companies?.find((company) => company.id === job.company.id);
+const company = companies?.find(company => company.id === job.company.id);
 
 // Show page error if company is not found
 if (!company) throw createError({ message: "Company not found", statusCode: 404 });
@@ -30,7 +30,7 @@ const form = useFormState({
   linkedin: ""
 });
 
-const moreJobsByCompany = jobsStore.data.filter((job) => job.company.id === company.id && job.id !== jobId);
+const moreJobsByCompany = jobsStore.data.filter(job => job.company.id === company.id && job.id !== jobId);
 
 // Submit application (In a real-world scenario, this would be sent to a backend)
 const applyToJob = () => {

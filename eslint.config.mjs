@@ -58,6 +58,7 @@ export default defineConfigWithVueTs([
       "@stylistic/space-in-parens": ["error", "never"],
       "@stylistic/template-curly-spacing": "error",
       "@stylistic/quote-props": ["error", "consistent-as-needed"],
+      "@stylistic/arrow-parens": ["error", "as-needed", { requireForBlockBody: true }],
       "@typescript-eslint/no-explicit-any": "error",
       "@typescript-eslint/consistent-type-imports": "error",
       "vue/first-attribute-linebreak": ["error", { singleline: "ignore", multiline: "ignore" }],

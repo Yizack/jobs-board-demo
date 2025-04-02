@@ -22,7 +22,7 @@ describe("ItemsPagination.vue", () => {
       max,
       ...pagination.config,
       "modelValue": pagination.config.currentPage,
-      "onUpdate:modelValue": (e) => wrapper.setProps({ modelValue: e })
+      "onUpdate:modelValue": e => wrapper.setProps({ modelValue: e })
     }
   });
 
