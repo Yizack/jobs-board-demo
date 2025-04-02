@@ -1,23 +1,24 @@
 [
   {
-    "id": 38,
-    "category": "Product Management",
+    "id": 16,
+    "category": "Mobile",
     "company": {
-      "id": 8,
-      "name": "InnovateX"
+      "id": 6,
+      "name": "AppMakers"
     },
-    "description": "Seeking an experienced Product Manager to lead product development and ensure successful delivery using agile methodologies.",
-    "location": "Mexico City, Mexico",
-    "title": "Product Manager - Senior",
+    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
+    "location": "Moscow, Russia",
+    "title": "Mobile Developer",
     "tags": [
-      "Product Management",
-      "Agile",
-      "Communication"
+      "Mobile",
+      "React Native",
+      "iOS",
+      "Android"
     ],
-    "timestamp": 1740339633396
+    "timestamp": 1743482892382
   },
   {
-    "id": 27,
+    "id": 7,
     "category": "Security",
     "company": {
       "id": 7,
@@ -25,13 +26,48 @@
     },
     "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
     "location": "Bangalore, India",
-    "title": "Security Engineer - Principal",
+    "title": "Security Engineer - Lead",
     "tags": [
       "Security",
       "Network Security",
       "Encryption"
     ],
-    "timestamp": 1740303676097
+    "timestamp": 1743476987293
+  },
+  {
+    "id": 14,
+    "category": "DevOps",
+    "company": {
+      "id": 4,
+      "name": "CloudTech"
+    },
+    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
+    "location": "São Paulo, Brazil",
+    "title": "DevOps Engineer",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Cloud",
+      "Automation"
+    ],
+    "timestamp": 1743428719204
+  },
+  {
+    "id": 49,
+    "category": "QA",
+    "company": {
+      "id": 9,
+      "name": "QualityFirst"
+    },
+    "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
+    "location": "Remote",
+    "title": "QA Engineer - Senior",
+    "tags": [
+      "QA",
+      "Testing",
+      "Quality Assurance"
+    ],
+    "timestamp": 1743383700721
   },
   {
     "id": 28,
@@ -48,227 +84,43 @@
       "Agile",
       "Communication"
     ],
-    "timestamp": 1740098356500
+    "timestamp": 1743342366170
   },
   {
-    "id": 42,
-    "category": "Backend",
+    "id": 25,
+    "category": "Data Science",
     "company": {
-      "id": 2,
-      "name": "DevFirm"
+      "id": 5,
+      "name": "DataCorp"
     },
-    "description": "Join our team as a Backend Developer to design and implement scalable APIs using Node.js, Python, or Java. Experience with databases is essential.",
+    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
     "location": "Remote",
-    "title": "Backend Developer - Intermediate",
+    "title": "Data Scientist - Principal",
     "tags": [
-      "Backend",
-      "API",
-      "Database",
-      "Node.js",
-      "Python"
+      "Data Science",
+      "Machine Learning",
+      "Python",
+      "R"
     ],
-    "timestamp": 1740081191483
+    "timestamp": 1743281712504
   },
   {
-    "id": 50,
+    "id": 40,
     "category": "UI/UX",
     "company": {
       "id": 10,
       "name": "DesignHub"
     },
     "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
-    "location": "Tokyo, Japan",
-    "title": "UI/UX Designer - Lead",
+    "location": "Rome, Italy",
+    "title": "UI/UX Designer",
     "tags": [
       "UI/UX",
       "Design",
       "Sketch",
       "Figma"
     ],
-    "timestamp": 1740076775110
-  },
-  {
-    "id": 16,
-    "category": "Mobile",
-    "company": {
-      "id": 6,
-      "name": "AppMakers"
-    },
-    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
-    "location": "Moscow, Russia",
-    "title": "Mobile Developer",
-    "tags": [
-      "Mobile",
-      "React Native",
-      "iOS",
-      "Android"
-    ],
-    "timestamp": 1740027339421
-  },
-  {
-    "id": 13,
-    "category": "Fullstack",
-    "company": {
-      "id": 3,
-      "name": "StartupX"
-    },
-    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
-    "location": "Remote",
-    "title": "Full Stack Engineer - Principal",
-    "tags": [
-      "Fullstack",
-      "Web Development",
-      "JavaScript",
-      "API"
-    ],
-    "timestamp": 1740017459717
-  },
-  {
-    "id": 5,
-    "category": "Data Science",
-    "company": {
-      "id": 5,
-      "name": "DataCorp"
-    },
-    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
-    "location": "Remote",
-    "title": "Data Scientist",
-    "tags": [
-      "Data Science",
-      "Machine Learning",
-      "Python",
-      "R"
-    ],
-    "timestamp": 1740001685013
-  },
-  {
-    "id": 21,
-    "category": "Frontend",
-    "company": {
-      "id": 1,
-      "name": "TechCorp"
-    },
-    "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
-    "location": "London, UK",
-    "title": "Frontend Developer",
-    "tags": [
-      "Frontend",
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Web Development"
-    ],
-    "timestamp": 1739989003470
-  },
-  {
-    "id": 17,
-    "category": "Security",
-    "company": {
-      "id": 7,
-      "name": "SecureIT"
-    },
-    "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
-    "location": "Seoul, South Korea",
-    "title": "Security Engineer",
-    "tags": [
-      "Security",
-      "Network Security",
-      "Encryption"
-    ],
-    "timestamp": 1739969563254
-  },
-  {
-    "id": 31,
-    "category": "Frontend",
-    "company": {
-      "id": 1,
-      "name": "TechCorp"
-    },
-    "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
-    "location": "Madrid, Spain",
-    "title": "Frontend Developer - Intermediate",
-    "tags": [
-      "Frontend",
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Web Development"
-    ],
-    "timestamp": 1739953798549
-  },
-  {
-    "id": 12,
-    "category": "Backend",
-    "company": {
-      "id": 2,
-      "name": "DevFirm"
-    },
-    "description": "Join our team as a Backend Developer to design and implement scalable APIs using Node.js, Python, or Java. Experience with databases is essential.",
-    "location": "Remote",
-    "title": "Backend Developer",
-    "tags": [
-      "Backend",
-      "API",
-      "Database",
-      "Node.js",
-      "Python"
-    ],
-    "timestamp": 1739774636936
-  },
-  {
-    "id": 23,
-    "category": "Fullstack",
-    "company": {
-      "id": 3,
-      "name": "StartupX"
-    },
-    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
-    "location": "Berlin, Germany",
-    "title": "Full Stack Engineer - Lead",
-    "tags": [
-      "Fullstack",
-      "Web Development",
-      "JavaScript",
-      "API"
-    ],
-    "timestamp": 1739717781547
-  },
-  {
-    "id": 41,
-    "category": "Frontend",
-    "company": {
-      "id": 1,
-      "name": "TechCorp"
-    },
-    "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
-    "location": "London, UK",
-    "title": "Frontend Developer - Senior",
-    "tags": [
-      "Frontend",
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Web Development"
-    ],
-    "timestamp": 1739574564521
-  },
-  {
-    "id": 35,
-    "category": "Data Science",
-    "company": {
-      "id": 5,
-      "name": "DataCorp"
-    },
-    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
-    "location": "Stockholm, Sweden",
-    "title": "Data Scientist - Intermediate",
-    "tags": [
-      "Data Science",
-      "Machine Learning",
-      "Python",
-      "R"
-    ],
-    "timestamp": 1739547999003
+    "timestamp": 1743281122579
   },
   {
     "id": 1,
@@ -287,167 +139,7 @@
       "HTML",
       "Web Development"
     ],
-    "timestamp": 1739546572308
-  },
-  {
-    "id": 24,
-    "category": "DevOps",
-    "company": {
-      "id": 4,
-      "name": "CloudTech"
-    },
-    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
-    "location": "Remote",
-    "title": "DevOps Engineer - Senior",
-    "tags": [
-      "DevOps",
-      "CI/CD",
-      "Cloud",
-      "Automation"
-    ],
-    "timestamp": 1739534451402
-  },
-  {
-    "id": 10,
-    "category": "UI/UX",
-    "company": {
-      "id": 10,
-      "name": "DesignHub"
-    },
-    "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
-    "location": "Tokyo, Japan",
-    "title": "UI/UX Designer - Principal",
-    "tags": [
-      "UI/UX",
-      "Design",
-      "Sketch",
-      "Figma"
-    ],
-    "timestamp": 1739435307091
-  },
-  {
-    "id": 33,
-    "category": "Fullstack",
-    "company": {
-      "id": 3,
-      "name": "StartupX"
-    },
-    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
-    "location": "Dubai, UAE",
-    "title": "Full Stack Engineer - Senior",
-    "tags": [
-      "Fullstack",
-      "Web Development",
-      "JavaScript",
-      "API"
-    ],
-    "timestamp": 1739410373093
-  },
-  {
-    "id": 46,
-    "category": "Mobile",
-    "company": {
-      "id": 6,
-      "name": "AppMakers"
-    },
-    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
-    "location": "Sydney, Australia",
-    "title": "Mobile Developer - Senior",
-    "tags": [
-      "Mobile",
-      "React Native",
-      "iOS",
-      "Android"
-    ],
-    "timestamp": 1739352025228
-  },
-  {
-    "id": 37,
-    "category": "Security",
-    "company": {
-      "id": 7,
-      "name": "SecureIT"
-    },
-    "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
-    "location": "Seoul, South Korea",
-    "title": "Security Engineer - Senior",
-    "tags": [
-      "Security",
-      "Network Security",
-      "Encryption"
-    ],
-    "timestamp": 1739322260385
-  },
-  {
-    "id": 39,
-    "category": "QA",
-    "company": {
-      "id": 9,
-      "name": "QualityFirst"
-    },
-    "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
-    "location": "Remote",
-    "title": "QA Engineer - Intermediate",
-    "tags": [
-      "QA",
-      "Testing",
-      "Quality Assurance"
-    ],
-    "timestamp": 1739280975917
-  },
-  {
-    "id": 40,
-    "category": "UI/UX",
-    "company": {
-      "id": 10,
-      "name": "DesignHub"
-    },
-    "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
-    "location": "Rome, Italy",
-    "title": "UI/UX Designer",
-    "tags": [
-      "UI/UX",
-      "Design",
-      "Sketch",
-      "Figma"
-    ],
-    "timestamp": 1739252017604
-  },
-  {
-    "id": 26,
-    "category": "Mobile",
-    "company": {
-      "id": 6,
-      "name": "AppMakers"
-    },
-    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
-    "location": "Remote",
-    "title": "Mobile Developer - Lead",
-    "tags": [
-      "Mobile",
-      "React Native",
-      "iOS",
-      "Android"
-    ],
-    "timestamp": 1739201878151
-  },
-  {
-    "id": 45,
-    "category": "Data Science",
-    "company": {
-      "id": 5,
-      "name": "DataCorp"
-    },
-    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
-    "location": "Remote",
-    "title": "Data Scientist - Senior",
-    "tags": [
-      "Data Science",
-      "Machine Learning",
-      "Python",
-      "R"
-    ],
-    "timestamp": 1739189851946
+    "timestamp": 1743274689979
   },
   {
     "id": 48,
@@ -464,78 +156,62 @@
       "Agile",
       "Communication"
     ],
-    "timestamp": 1739168616486
+    "timestamp": 1743270532205
   },
   {
-    "id": 9,
-    "category": "QA",
-    "company": {
-      "id": 9,
-      "name": "QualityFirst"
-    },
-    "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
-    "location": "Remote",
-    "title": "QA Engineer - Lead",
-    "tags": [
-      "QA",
-      "Testing",
-      "Quality Assurance"
-    ],
-    "timestamp": 1739127010995
-  },
-  {
-    "id": 20,
-    "category": "UI/UX",
-    "company": {
-      "id": 10,
-      "name": "DesignHub"
-    },
-    "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
-    "location": "Rome, Italy",
-    "title": "UI/UX Designer - Senior",
-    "tags": [
-      "UI/UX",
-      "Design",
-      "Sketch",
-      "Figma"
-    ],
-    "timestamp": 1739042891877
-  },
-  {
-    "id": 15,
+    "id": 5,
     "category": "Data Science",
     "company": {
       "id": 5,
       "name": "DataCorp"
     },
     "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
-    "location": "Stockholm, Sweden",
-    "title": "Data Scientist - Lead",
+    "location": "Remote",
+    "title": "Data Scientist",
     "tags": [
       "Data Science",
       "Machine Learning",
       "Python",
       "R"
     ],
-    "timestamp": 1738990771434
+    "timestamp": 1743255474641
   },
   {
-    "id": 43,
-    "category": "Fullstack",
+    "id": 12,
+    "category": "Backend",
     "company": {
-      "id": 3,
-      "name": "StartupX"
+      "id": 2,
+      "name": "DevFirm"
     },
-    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
-    "location": "Berlin, Germany",
-    "title": "Full Stack Engineer",
+    "description": "Join our team as a Backend Developer to design and implement scalable APIs using Node.js, Python, or Java. Experience with databases is essential.",
+    "location": "Remote",
+    "title": "Backend Developer",
     "tags": [
-      "Fullstack",
-      "Web Development",
-      "JavaScript",
-      "API"
+      "Backend",
+      "API",
+      "Database",
+      "Node.js",
+      "Python"
     ],
-    "timestamp": 1738964374506
+    "timestamp": 1743218830867
+  },
+  {
+    "id": 50,
+    "category": "UI/UX",
+    "company": {
+      "id": 10,
+      "name": "DesignHub"
+    },
+    "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
+    "location": "Tokyo, Japan",
+    "title": "UI/UX Designer - Lead",
+    "tags": [
+      "UI/UX",
+      "Design",
+      "Sketch",
+      "Figma"
+    ],
+    "timestamp": 1743193768764
   },
   {
     "id": 8,
@@ -552,136 +228,27 @@
       "Agile",
       "Communication"
     ],
-    "timestamp": 1738964103531
+    "timestamp": 1743017619325
   },
   {
-    "id": 36,
-    "category": "Mobile",
+    "id": 39,
+    "category": "QA",
     "company": {
-      "id": 6,
-      "name": "AppMakers"
+      "id": 9,
+      "name": "QualityFirst"
     },
-    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
-    "location": "Moscow, Russia",
-    "title": "Mobile Developer - Intermediate",
-    "tags": [
-      "Mobile",
-      "React Native",
-      "iOS",
-      "Android"
-    ],
-    "timestamp": 1738913085276
-  },
-  {
-    "id": 14,
-    "category": "DevOps",
-    "company": {
-      "id": 4,
-      "name": "CloudTech"
-    },
-    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
-    "location": "São Paulo, Brazil",
-    "title": "DevOps Engineer",
-    "tags": [
-      "DevOps",
-      "CI/CD",
-      "Cloud",
-      "Automation"
-    ],
-    "timestamp": 1738894445427
-  },
-  {
-    "id": 18,
-    "category": "Product Management",
-    "company": {
-      "id": 8,
-      "name": "InnovateX"
-    },
-    "description": "Seeking an experienced Product Manager to lead product development and ensure successful delivery using agile methodologies.",
-    "location": "Mexico City, Mexico",
-    "title": "Product Manager - Principal",
-    "tags": [
-      "Product Management",
-      "Agile",
-      "Communication"
-    ],
-    "timestamp": 1738818812774
-  },
-  {
-    "id": 3,
-    "category": "Fullstack",
-    "company": {
-      "id": 3,
-      "name": "StartupX"
-    },
-    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
+    "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
     "location": "Remote",
-    "title": "Full Stack Engineer - Intermediate",
+    "title": "QA Engineer - Intermediate",
     "tags": [
-      "Fullstack",
-      "Web Development",
-      "JavaScript",
-      "API"
+      "QA",
+      "Testing",
+      "Quality Assurance"
     ],
-    "timestamp": 1738656223825
+    "timestamp": 1743010706327
   },
   {
-    "id": 32,
-    "category": "Backend",
-    "company": {
-      "id": 2,
-      "name": "DevFirm"
-    },
-    "description": "Join our team as a Backend Developer to design and implement scalable APIs using Node.js, Python, or Java. Experience with databases is essential.",
-    "location": "Amsterdam, Netherlands",
-    "title": "Backend Developer - Lead",
-    "tags": [
-      "Backend",
-      "API",
-      "Database",
-      "Node.js",
-      "Python"
-    ],
-    "timestamp": 1738621689738
-  },
-  {
-    "id": 6,
-    "category": "Mobile",
-    "company": {
-      "id": 6,
-      "name": "AppMakers"
-    },
-    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
-    "location": "Sydney, Australia",
-    "title": "Mobile Developer - Principal",
-    "tags": [
-      "Mobile",
-      "React Native",
-      "iOS",
-      "Android"
-    ],
-    "timestamp": 1738445885533
-  },
-  {
-    "id": 34,
-    "category": "DevOps",
-    "company": {
-      "id": 4,
-      "name": "CloudTech"
-    },
-    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
-    "location": "Remote",
-    "title": "DevOps Engineer - Lead",
-    "tags": [
-      "DevOps",
-      "CI/CD",
-      "Cloud",
-      "Automation"
-    ],
-    "timestamp": 1738300687106
-  },
-  {
-    "id": 7,
+    "id": 47,
     "category": "Security",
     "company": {
       "id": 7,
@@ -689,13 +256,13 @@
     },
     "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
     "location": "Bangalore, India",
-    "title": "Security Engineer - Lead",
+    "title": "Security Engineer - Intermediate",
     "tags": [
       "Security",
       "Network Security",
       "Encryption"
     ],
-    "timestamp": 1738239175114
+    "timestamp": 1742993510319
   },
   {
     "id": 30,
@@ -713,42 +280,167 @@
       "Sketch",
       "Figma"
     ],
-    "timestamp": 1738139595558
+    "timestamp": 1742988134324
   },
   {
-    "id": 44,
-    "category": "DevOps",
+    "id": 27,
+    "category": "Security",
     "company": {
-      "id": 4,
-      "name": "CloudTech"
+      "id": 7,
+      "name": "SecureIT"
     },
-    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
-    "location": "Paris, France",
-    "title": "DevOps Engineer - Principal",
+    "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
+    "location": "Bangalore, India",
+    "title": "Security Engineer - Principal",
     "tags": [
-      "DevOps",
-      "CI/CD",
-      "Cloud",
-      "Automation"
+      "Security",
+      "Network Security",
+      "Encryption"
     ],
-    "timestamp": 1738121970272
+    "timestamp": 1742925628622
   },
   {
-    "id": 19,
+    "id": 15,
+    "category": "Data Science",
+    "company": {
+      "id": 5,
+      "name": "DataCorp"
+    },
+    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
+    "location": "Stockholm, Sweden",
+    "title": "Data Scientist - Lead",
+    "tags": [
+      "Data Science",
+      "Machine Learning",
+      "Python",
+      "R"
+    ],
+    "timestamp": 1742850514021
+  },
+  {
+    "id": 10,
+    "category": "UI/UX",
+    "company": {
+      "id": 10,
+      "name": "DesignHub"
+    },
+    "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
+    "location": "Tokyo, Japan",
+    "title": "UI/UX Designer - Principal",
+    "tags": [
+      "UI/UX",
+      "Design",
+      "Sketch",
+      "Figma"
+    ],
+    "timestamp": 1742780935109
+  },
+  {
+    "id": 17,
+    "category": "Security",
+    "company": {
+      "id": 7,
+      "name": "SecureIT"
+    },
+    "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
+    "location": "Seoul, South Korea",
+    "title": "Security Engineer",
+    "tags": [
+      "Security",
+      "Network Security",
+      "Encryption"
+    ],
+    "timestamp": 1742683450986
+  },
+  {
+    "id": 33,
+    "category": "Fullstack",
+    "company": {
+      "id": 3,
+      "name": "StartupX"
+    },
+    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
+    "location": "Dubai, UAE",
+    "title": "Full Stack Engineer - Senior",
+    "tags": [
+      "Fullstack",
+      "Web Development",
+      "JavaScript",
+      "API"
+    ],
+    "timestamp": 1742673533193
+  },
+  {
+    "id": 42,
+    "category": "Backend",
+    "company": {
+      "id": 2,
+      "name": "DevFirm"
+    },
+    "description": "Join our team as a Backend Developer to design and implement scalable APIs using Node.js, Python, or Java. Experience with databases is essential.",
+    "location": "Remote",
+    "title": "Backend Developer - Intermediate",
+    "tags": [
+      "Backend",
+      "API",
+      "Database",
+      "Node.js",
+      "Python"
+    ],
+    "timestamp": 1742644068640
+  },
+  {
+    "id": 29,
     "category": "QA",
     "company": {
       "id": 9,
       "name": "QualityFirst"
     },
     "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
-    "location": "Cairo, Egypt",
-    "title": "QA Engineer",
+    "location": "Remote",
+    "title": "QA Engineer - Principal",
     "tags": [
       "QA",
       "Testing",
       "Quality Assurance"
     ],
-    "timestamp": 1738033538269
+    "timestamp": 1742557123796
+  },
+  {
+    "id": 37,
+    "category": "Security",
+    "company": {
+      "id": 7,
+      "name": "SecureIT"
+    },
+    "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
+    "location": "Seoul, South Korea",
+    "title": "Security Engineer - Senior",
+    "tags": [
+      "Security",
+      "Network Security",
+      "Encryption"
+    ],
+    "timestamp": 1742471365029
+  },
+  {
+    "id": 21,
+    "category": "Frontend",
+    "company": {
+      "id": 1,
+      "name": "TechCorp"
+    },
+    "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
+    "location": "London, UK",
+    "title": "Frontend Developer",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Web Development"
+    ],
+    "timestamp": 1742459191144
   },
   {
     "id": 4,
@@ -766,10 +458,10 @@
       "Cloud",
       "Automation"
     ],
-    "timestamp": 1738025663160
+    "timestamp": 1742370735349
   },
   {
-    "id": 29,
+    "id": 9,
     "category": "QA",
     "company": {
       "id": 9,
@@ -777,24 +469,42 @@
     },
     "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
     "location": "Remote",
-    "title": "QA Engineer - Principal",
+    "title": "QA Engineer - Lead",
     "tags": [
       "QA",
       "Testing",
       "Quality Assurance"
     ],
-    "timestamp": 1737920912807
+    "timestamp": 1742231039400
   },
   {
-    "id": 11,
+    "id": 24,
+    "category": "DevOps",
+    "company": {
+      "id": 4,
+      "name": "CloudTech"
+    },
+    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
+    "location": "Remote",
+    "title": "DevOps Engineer - Senior",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Cloud",
+      "Automation"
+    ],
+    "timestamp": 1742220862498
+  },
+  {
+    "id": 41,
     "category": "Frontend",
     "company": {
       "id": 1,
       "name": "TechCorp"
     },
     "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
-    "location": "Remote",
-    "title": "Frontend Developer - Principal",
+    "location": "London, UK",
+    "title": "Frontend Developer - Senior",
     "tags": [
       "Frontend",
       "JavaScript",
@@ -802,7 +512,185 @@
       "HTML",
       "Web Development"
     ],
-    "timestamp": 1737887764147
+    "timestamp": 1742179115747
+  },
+  {
+    "id": 19,
+    "category": "QA",
+    "company": {
+      "id": 9,
+      "name": "QualityFirst"
+    },
+    "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
+    "location": "Cairo, Egypt",
+    "title": "QA Engineer",
+    "tags": [
+      "QA",
+      "Testing",
+      "Quality Assurance"
+    ],
+    "timestamp": 1742146405729
+  },
+  {
+    "id": 38,
+    "category": "Product Management",
+    "company": {
+      "id": 8,
+      "name": "InnovateX"
+    },
+    "description": "Seeking an experienced Product Manager to lead product development and ensure successful delivery using agile methodologies.",
+    "location": "Mexico City, Mexico",
+    "title": "Product Manager - Senior",
+    "tags": [
+      "Product Management",
+      "Agile",
+      "Communication"
+    ],
+    "timestamp": 1742146034302
+  },
+  {
+    "id": 26,
+    "category": "Mobile",
+    "company": {
+      "id": 6,
+      "name": "AppMakers"
+    },
+    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
+    "location": "Remote",
+    "title": "Mobile Developer - Lead",
+    "tags": [
+      "Mobile",
+      "React Native",
+      "iOS",
+      "Android"
+    ],
+    "timestamp": 1742120915111
+  },
+  {
+    "id": 46,
+    "category": "Mobile",
+    "company": {
+      "id": 6,
+      "name": "AppMakers"
+    },
+    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
+    "location": "Sydney, Australia",
+    "title": "Mobile Developer - Senior",
+    "tags": [
+      "Mobile",
+      "React Native",
+      "iOS",
+      "Android"
+    ],
+    "timestamp": 1742061874817
+  },
+  {
+    "id": 43,
+    "category": "Fullstack",
+    "company": {
+      "id": 3,
+      "name": "StartupX"
+    },
+    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
+    "location": "Berlin, Germany",
+    "title": "Full Stack Engineer",
+    "tags": [
+      "Fullstack",
+      "Web Development",
+      "JavaScript",
+      "API"
+    ],
+    "timestamp": 1742055727765
+  },
+  {
+    "id": 18,
+    "category": "Product Management",
+    "company": {
+      "id": 8,
+      "name": "InnovateX"
+    },
+    "description": "Seeking an experienced Product Manager to lead product development and ensure successful delivery using agile methodologies.",
+    "location": "Mexico City, Mexico",
+    "title": "Product Manager - Principal",
+    "tags": [
+      "Product Management",
+      "Agile",
+      "Communication"
+    ],
+    "timestamp": 1742016252771
+  },
+  {
+    "id": 36,
+    "category": "Mobile",
+    "company": {
+      "id": 6,
+      "name": "AppMakers"
+    },
+    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
+    "location": "Moscow, Russia",
+    "title": "Mobile Developer - Intermediate",
+    "tags": [
+      "Mobile",
+      "React Native",
+      "iOS",
+      "Android"
+    ],
+    "timestamp": 1741836305112
+  },
+  {
+    "id": 20,
+    "category": "UI/UX",
+    "company": {
+      "id": 10,
+      "name": "DesignHub"
+    },
+    "description": "We are seeking a talented UI/UX Designer to create user-friendly interfaces and engaging user experiences. Proficiency in Sketch and Figma is a plus.",
+    "location": "Rome, Italy",
+    "title": "UI/UX Designer - Senior",
+    "tags": [
+      "UI/UX",
+      "Design",
+      "Sketch",
+      "Figma"
+    ],
+    "timestamp": 1741806575236
+  },
+  {
+    "id": 31,
+    "category": "Frontend",
+    "company": {
+      "id": 1,
+      "name": "TechCorp"
+    },
+    "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
+    "location": "Madrid, Spain",
+    "title": "Frontend Developer - Intermediate",
+    "tags": [
+      "Frontend",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Web Development"
+    ],
+    "timestamp": 1741719268648
+  },
+  {
+    "id": 34,
+    "category": "DevOps",
+    "company": {
+      "id": 4,
+      "name": "CloudTech"
+    },
+    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
+    "location": "Remote",
+    "title": "DevOps Engineer - Lead",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Cloud",
+      "Automation"
+    ],
+    "timestamp": 1741654664269
   },
   {
     "id": 22,
@@ -821,25 +709,45 @@
       "Node.js",
       "Python"
     ],
-    "timestamp": 1737878508733
+    "timestamp": 1741627493248
   },
   {
-    "id": 25,
-    "category": "Data Science",
+    "id": 11,
+    "category": "Frontend",
     "company": {
-      "id": 5,
-      "name": "DataCorp"
+      "id": 1,
+      "name": "TechCorp"
     },
-    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
+    "description": "We are seeking a skilled Frontend Developer proficient in modern JavaScript frameworks and responsive design. Experience with React.js or Vue.js is a plus.",
     "location": "Remote",
-    "title": "Data Scientist - Principal",
+    "title": "Frontend Developer - Principal",
     "tags": [
-      "Data Science",
-      "Machine Learning",
-      "Python",
-      "R"
+      "Frontend",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Web Development"
     ],
-    "timestamp": 1737859195237
+    "timestamp": 1741545931678
+  },
+  {
+    "id": 32,
+    "category": "Backend",
+    "company": {
+      "id": 2,
+      "name": "DevFirm"
+    },
+    "description": "Join our team as a Backend Developer to design and implement scalable APIs using Node.js, Python, or Java. Experience with databases is essential.",
+    "location": "Amsterdam, Netherlands",
+    "title": "Backend Developer - Lead",
+    "tags": [
+      "Backend",
+      "API",
+      "Database",
+      "Node.js",
+      "Python"
+    ],
+    "timestamp": 1741508017659
   },
   {
     "id": 2,
@@ -858,40 +766,132 @@
       "Node.js",
       "Python"
     ],
-    "timestamp": 1737815087083
+    "timestamp": 1741327586907
   },
   {
-    "id": 47,
-    "category": "Security",
+    "id": 6,
+    "category": "Mobile",
     "company": {
-      "id": 7,
-      "name": "SecureIT"
+      "id": 6,
+      "name": "AppMakers"
     },
-    "description": "We are in search of a Security Engineer to protect our systems and data through vulnerability assessments and robust security practices.",
-    "location": "Bangalore, India",
-    "title": "Security Engineer - Intermediate",
+    "description": "Join our mobile team as a Mobile Developer to create innovative applications for iOS and Android platforms. Experience with React Native or Swift is desired.",
+    "location": "Sydney, Australia",
+    "title": "Mobile Developer - Principal",
     "tags": [
-      "Security",
-      "Network Security",
-      "Encryption"
+      "Mobile",
+      "React Native",
+      "iOS",
+      "Android"
     ],
-    "timestamp": 1737779682465
+    "timestamp": 1741217207855
   },
   {
-    "id": 49,
-    "category": "QA",
+    "id": 45,
+    "category": "Data Science",
     "company": {
-      "id": 9,
-      "name": "QualityFirst"
+      "id": 5,
+      "name": "DataCorp"
     },
-    "description": "Join our quality assurance team as a QA Engineer responsible for testing software and ensuring product quality through comprehensive test cases.",
+    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
     "location": "Remote",
-    "title": "QA Engineer - Senior",
+    "title": "Data Scientist - Senior",
     "tags": [
-      "QA",
-      "Testing",
-      "Quality Assurance"
+      "Data Science",
+      "Machine Learning",
+      "Python",
+      "R"
     ],
-    "timestamp": 1737776577238
+    "timestamp": 1741201527632
+  },
+  {
+    "id": 3,
+    "category": "Fullstack",
+    "company": {
+      "id": 3,
+      "name": "StartupX"
+    },
+    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
+    "location": "Remote",
+    "title": "Full Stack Engineer - Intermediate",
+    "tags": [
+      "Fullstack",
+      "Web Development",
+      "JavaScript",
+      "API"
+    ],
+    "timestamp": 1741170335022
+  },
+  {
+    "id": 35,
+    "category": "Data Science",
+    "company": {
+      "id": 5,
+      "name": "DataCorp"
+    },
+    "description": "Looking for a Data Scientist with strong skills in machine learning, data analysis, and statistical modeling. Proficiency in Python and R required.",
+    "location": "Stockholm, Sweden",
+    "title": "Data Scientist - Intermediate",
+    "tags": [
+      "Data Science",
+      "Machine Learning",
+      "Python",
+      "R"
+    ],
+    "timestamp": 1741122379375
+  },
+  {
+    "id": 44,
+    "category": "DevOps",
+    "company": {
+      "id": 4,
+      "name": "CloudTech"
+    },
+    "description": "Seeking a DevOps Engineer to automate deployment processes and manage our cloud infrastructure using AWS, Azure, or GCP.",
+    "location": "Paris, France",
+    "title": "DevOps Engineer - Principal",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Cloud",
+      "Automation"
+    ],
+    "timestamp": 1741091210193
+  },
+  {
+    "id": 13,
+    "category": "Fullstack",
+    "company": {
+      "id": 3,
+      "name": "StartupX"
+    },
+    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
+    "location": "Remote",
+    "title": "Full Stack Engineer - Principal",
+    "tags": [
+      "Fullstack",
+      "Web Development",
+      "JavaScript",
+      "API"
+    ],
+    "timestamp": 1741081147585
+  },
+  {
+    "id": 23,
+    "category": "Fullstack",
+    "company": {
+      "id": 3,
+      "name": "StartupX"
+    },
+    "description": "We are looking for a Full Stack Engineer proficient in both frontend and backend technologies to build and maintain our web applications.",
+    "location": "Berlin, Germany",
+    "title": "Full Stack Engineer - Lead",
+    "tags": [
+      "Fullstack",
+      "Web Development",
+      "JavaScript",
+      "API"
+    ],
+    "timestamp": 1741016511547
   }
 ]
