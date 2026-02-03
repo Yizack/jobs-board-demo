@@ -63,7 +63,8 @@ export default defineConfigWithVueTs([
       "@typescript-eslint/consistent-type-imports": "error",
       "vue/first-attribute-linebreak": ["error", { singleline: "ignore", multiline: "ignore" }],
       "vue/max-attributes-per-line": ["error", { singleline: 100 }],
-      "vue/singleline-html-element-content-newline": ["off"]
+      "vue/singleline-html-element-content-newline": ["off"],
+      "vue/no-duplicate-class-names": "error"
     }
   }
 ]);
