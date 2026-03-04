@@ -23,7 +23,6 @@ describe("Job Store", () => {
     expect(store.isFetching).toBe(true);
   });
 
-
   it("fetches data and updates store", async () => {
     const store = useJobsStore();
     await store.fetchData();

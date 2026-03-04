@@ -1,4 +1,4 @@
-import { type RouteRecordRaw } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
 import JobList from "~/views/jobs/JobList.vue";
 import JobDetails from "~/views/jobs/JobDetails.vue";
 

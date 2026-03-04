@@ -82,7 +82,7 @@ The project was developed using the following environment.
 | Software | Version |
 | --- | --- |
 | Node | 24 |
-| PNPM | 10.28.2 |
+| PNPM | 10.30.3 |
 
 ### Packages
 

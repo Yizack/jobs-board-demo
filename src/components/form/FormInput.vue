@@ -17,7 +17,7 @@ const model = defineModel<string>({ required: true });
 </script>
 
 <template>
-  <div :class="{ 'form-input-icon': icon , 'form-input-floating': floating }">
+  <div :class="{ 'form-input-icon': icon, 'form-input-floating': floating }">
     <Icon v-if="icon" :icon="icon" class="input-icon h-5 w-5" />
     <input
       :id="id"
@@ -29,7 +29,7 @@ const model = defineModel<string>({ required: true });
       :autocomplete="autocomplete"
       :required="required"
     >
-    <label v-if="floating" :for="id" :class="{ 'pl-8' : icon, 'form-label-emphasis': emphasis }">
+    <label v-if="floating" :for="id" :class="{ 'pl-8': icon, 'form-label-emphasis': emphasis }">
       {{ placeholder }}
     </label>
   </div>

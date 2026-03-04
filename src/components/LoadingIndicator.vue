@@ -21,7 +21,6 @@ router.beforeResolve((to, from, next) => {
 });
 </script>
 
-
 <template>
   <slot />
 </template>
